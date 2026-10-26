@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>SportSphere Coach Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#eaedff", "on-primary-container": "#cad3ff", "secondary-fixed-dim": "#6bd8cb", "on-secondary": "#ffffff", "background": "#faf8ff", "tertiary-fixed-dim": "#ffb95f", "surface-tint": "#2151da", "outline-variant": "#c4c5d7", "inverse-on-surface": "#eef0ff", "outline": "#747686", "error-container": "#ffdad6", "on-surface": "#131b2e", "on-tertiary-container": "#ffcb8f", "on-primary": "#ffffff", "tertiary-fixed": "#ffddb8", "secondary-container": "#86f2e4", "on-surface-variant": "#434655", "secondary-fixed": "#89f5e7", "inverse-primary": "#b7c4ff", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-dim": "#d2d9f4", "surface-container-low": "#f2f3ff", "on-primary-fixed-variant": "#0039b5", "on-secondary-fixed": "#00201d", "primary": "#0037b0", "tertiary-container": "#825100", "tertiary": "#623c00", "surface-container-lowest": "#ffffff", "primary-container": "#1d4ed8", "surface-bright": "#faf8ff", "surface-container-high": "#e2e7ff", "on-secondary-fixed-variant": "#005049", "surface-container-highest": "#dae2fd", "on-background": "#131b2e", "inverse-surface": "#283044", "on-tertiary": "#ffffff", "on-tertiary-fixed-variant": "#653e00", "secondary": "#006a61", "primary-fixed-dim": "#b7c4ff", "on-secondary-container": "#006f66", "primary-fixed": "#dce1ff", "surface": "#faf8ff", "surface-variant": "#dae2fd", "on-primary-fixed": "#001551", "on-tertiary-fixed": "#2a1700", "on-error": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-sm": "1rem", "margin": "2rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "1.5rem", "margin-mobile": "1rem", "space-md": "1rem", "space-xl": "2rem" }, "fontFamily": { "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-xs": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "metric-display": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#faf8ff;color:#131b2e;font-family:'Inter',sans-serif;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 4rem);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}input[type="checkbox"]:checked~#drawer-backdrop{display:block;}input[type="checkbox"]:checked~#coach-drawer{transform:translateX(0);}</style><style>body { min-height: max(884px, 100dvh); }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased"><input class="hidden peer" id="drawer-toggle" type="checkbox"/><div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-50 hidden transition-opacity" id="drawer-backdrop" onclick="document.getElementById('drawer-toggle').checked = false"></div><aside class="fixed top-0 left-0 bottom-0 w-[84%] max-w-[320px] bg-surface-container-lowest z-50 shadow-[0_20px_25px_-5px_rgba(15,23,42,0.12)] -translate-x-full transition-transform duration-300 ease-in-out flex flex-col pt-safe pb-safe" id="coach-drawer"><div class="h-16 px-space-md flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="SportSphere Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vx4lPFMjqJhOe4WCuim2Zz9kJrYrKu5qxaSM8FBLmuIwIXHU16s2_RbR_INUXXuNqCwPkIBID4j_Kx3IvViaVlQNkd28eewYiDWZKK3dSz1PIUWvifN5iTBFu4n6s4Fe-tY4YYzPEEMcyAJupTF9CZznYmObu38EacT-m6EvofF8lTZ1zypn78u1Q-qYeTJU-TFZT2vZDIaDg5tFoWPQwioenJT3qtKj_UTVokhvuWrW3m5XDOfIqoBPKO"/><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">SportSphere</span></div><button class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="document.getElementById('drawer-toggle').checked = false"><span class="material-symbols-outlined text-[24px]">close</span></button></div><div class="px-space-md py-space-sm bg-surface-container-low flex items-center gap-space-sm mx-space-md rounded-xl my-space-xs"><div class="relative flex-shrink-0"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center overflow-hidden"><span class="material-symbols-outlined text-on-primary text-[22px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim ring-2 ring-surface-container-lowest"></span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-label-md text-on-surface font-bold truncate">Coach Marcus Vance</span><span class="font-label-xs text-label-xs text-secondary font-semibold uppercase tracking-wider">High Performance Lead</span></div></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm space-y-space-xs"><p class="px-space-sm font-label-xs text-label-xs font-bold text-outline uppercase tracking-wider mb-space-xs">Coach Navigation</p><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md font-medium">Overview</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="tournaments" href="#"><span class="material-symbols-outlined text-[20px]">emoji_events</span><span class="font-label-md text-label-md font-medium">Tournaments</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="training-workspace" href="#"><span class="material-symbols-outlined text-[20px]">fitness_center</span><span class="font-label-md text-label-md font-medium">Training Workspace</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="rankings-leaderboards" href="#"><span class="material-symbols-outlined text-[20px]">leaderboard</span><span class="font-label-md text-label-md font-medium">Rankings & Leaderboards</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="highlights-news" href="#"><span class="material-symbols-outlined text-[20px]">feed</span><span class="font-label-md text-label-md font-medium">Highlights & News</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="athletes-network" href="#"><span class="material-symbols-outlined text-[20px]">diversity_3</span><span class="font-label-md text-label-md font-medium">Network & Roster</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="performance-radar" href="#"><span class="material-symbols-outlined text-[20px]">radar</span><span class="font-label-md text-label-md font-medium">Performance Radar</span></a></div></aside><header class="fixed top-0 w-full z-40 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-space-md flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><label class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" for="drawer-toggle"><span class="material-symbols-outlined text-[24px]">menu</span></label><img alt="SportSphere Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vx4lPFMjqJhOe4WCuim2Zz9kJrYrKu5qxaSM8FBLmuIwIXHU16s2_RbR_INUXXuNqCwPkIBID4j_Kx3IvViaVlQNkd28eewYiDWZKK3dSz1PIUWvifN5iTBFu4n6s4Fe-tY4YYzPEEMcyAJupTF9CZznYmObu38EacT-m6EvofF8lTZ1zypn78u1Q-qYeTJU-TFZT2vZDIaDg5tFoWPQwioenJT3qtKj_UTVokhvuWrW3m5XDOfIqoBPKO"/><span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight truncate max-w-[150px] xs:max-w-none">Highlights & News</span></div><div class="flex items-center bg-surface-container-high p-0.5 rounded-full"><span class="px-2 py-0.5 text-label-xs font-headline-sm font-semibold text-outline-variant hover:text-on-surface transition-colors cursor-pointer">Ath</span><span class="px-2 py-0.5 text-label-xs font-headline-sm font-semibold text-outline-variant hover:text-on-surface transition-colors cursor-pointer">Org</span><span class="px-2.5 py-1 text-label-xs font-headline-sm font-bold text-on-primary bg-primary-container rounded-full shadow-[0_1px_3px_0_rgba(15,23,42,0.1)]">Coach</span></div><div class="flex items-center gap-0.5"><button class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></button><button class="relative w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Segment Control Switcher -->
+<div class="px-margin-mobile pt-3 pb-2">
+<div class="bg-surface-container-high p-1 rounded-full flex items-center justify-between shadow-sm">
+<button class="flex-1 py-2 px-3 rounded-full font-headline-sm text-label-md transition-all duration-200 flex items-center justify-center gap-1.5 bg-surface-container-lowest text-primary shadow-sm" id="tab-highlights" onclick="switchSection('highlights')">
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+<span>Match Highlights</span>
+</button>
+<button class="flex-1 py-2 px-3 rounded-full font-headline-sm text-label-md transition-all duration-200 flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-on-surface" id="tab-news" onclick="switchSection('news')">
+<span class="material-symbols-outlined text-[18px]">newspaper</span>
+<span>Federation Wire</span>
+</button>
+</div>
+</div>
+<!-- Sport Category Selector Pills -->
+<div class="w-full overflow-x-auto no-scrollbar py-2 px-margin-mobile flex items-center gap-2">
+<button class="sport-pill px-4 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">sports</span>
+<span>All Sports</span>
+</button>
+<button class="sport-pill px-4 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">sports_soccer</span>
+<span>Football</span>
+</button>
+<button class="sport-pill px-4 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">sports_cricket</span>
+<span>Cricket</span>
+</button>
+<button class="sport-pill px-4 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">sports_basketball</span>
+<span>Basketball</span>
+</button>
+<button class="sport-pill px-4 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">directions_run</span>
+<span>Athletics</span>
+</button>
+<button class="sport-pill px-4 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">sports_tennis</span>
+<span>Badminton</span>
+</button>
+<button class="sport-pill px-4 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">sports_tennis</span>
+<span>Tennis</span>
+</button>
+</div>
+<!-- Content Section: Highlights Focus -->
+<div class="flex flex-col gap-4 mt-2 px-margin-mobile" id="section-highlights">
+<!-- Hero Featured Highlight Card -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col">
+<!-- Media Box with Play Overlay -->
+<div class="relative w-full aspect-video bg-inverse-surface overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Intense high school soccer final under evening stadium floodlights with players in electric blue and white jerseys celebrating a dramatic stoppage time goal on pristine green pitch, professional broadcast cinematic camera angle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiHZ8hYATwmxKGlSqUQnC9_pr5HVq1ZhJmELrQz4EyI6HEueq1qcDT5TN6lrjd7Mt_SmjDSx58Ai-SRAgzmaWJ58imawe6zMW8h2iHQbV_IbAk6iGOIYv_HNOvaI9nqrcprvWCoCH6Y8-WCTPLZHNyo6ioAUlMahhQJ_IjzT7xjhaM0tZSpL5syfqhcOdUtuASB3UvIHy-HNFKAzCBBQw9lE5vnumFWfFigfBkPOHtkN5YRVoODfyZMA"/>
+<!-- Ambient Scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/30 to-transparent"></div>
+<!-- Top Badges Row -->
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+<div class="flex items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-xs text-label-xs tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-ping"></span>
+              MATCH RECAP • 4K
+            </span>
+<span class="px-2 py-0.5 rounded-md bg-inverse-surface/80 backdrop-blur-md text-on-primary font-label-xs text-label-xs uppercase">
+              Football
+            </span>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-on-surface/70 backdrop-blur-md text-on-primary font-label-xs text-label-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+            4:35
+          </span>
+</div>
+<!-- Center Play Button Overlay -->
+<div class="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+<div class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110">
+<span class="material-symbols-outlined text-[32px] ml-1" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<!-- Lower Metadata Overlay -->
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between z-10 text-on-primary">
+<div class="flex items-center gap-1.5 text-on-primary-container font-label-xs text-label-xs">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>National Youth League</span>
+</div>
+<span class="font-label-xs text-label-xs text-surface-container-high opacity-90">Today • 2 hours ago</span>
+</div>
+</div>
+<!-- Hero Card Details -->
+<div class="p-4 flex flex-col gap-3">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">
+            Inter-Academy U19 Championship Final: St. Jude vs Metro Stars (2-1)
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            High tactical press, fast-transition set pieces, and clinical 88th-minute counter-attack film breakdown for coaching staff.
+          </p>
+</div>
+<!-- Card CTAs -->
+<div class="flex items-center gap-2 pt-1">
+<button class="flex-1 h-10 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-headline-sm text-label-md flex items-center justify-center gap-1.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">movie</span>
+<span>Watch Film</span>
+</button>
+<button class="h-10 px-3.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-headline-sm text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+<span class="hidden xs:inline">Save to Playbook</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Trending Clips Horizontal Reel -->
+<div class="flex flex-col gap-2.5 mt-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">local_fire_department</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Trending Analysis Reels</h3>
+</div>
+<button class="text-primary font-headline-sm text-label-sm flex items-center">
+<span>See all</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+<!-- Reel Scroll Track -->
+<div class="w-full overflow-x-auto no-scrollbar flex items-stretch gap-3 -mx-margin-mobile px-margin-mobile pb-1">
+<!-- Clip 1 -->
+<div class="flex-shrink-0 w-56 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col group cursor-pointer">
+<div class="relative w-full aspect-[4/3] bg-inverse-surface overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Athletics stadium track sprint photo finish with high-speed motion blur and digital laser timing graphics showing teenage athlete breaking junior record in lane 4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHJkNXPiREGJWyW03oAX4Z-03ZtVmYQ0PpN1scORDPYx5DcC7AkI_uvtbwuvqbJ1wnWWG_QsKxO8oef5JCfPhuC2o2durTvwN5AKa7umE8HdWTIhlvkNR7qjOND2B33vxiDL7RH-gs4JMoZ7yK10HNqYdKX582WK6iHcxSEljnah0zY8Ltl7GRwRA_AwjLu7-kCJTBFLjEprGmAoc4eaptzkBkDwHSrbLhpRXgH9jMo5lhe16ku9VZvQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<span class="absolute bottom-2 left-2 px-1.5 py-0.5 rounded bg-on-surface/80 text-on-primary font-label-xs text-label-xs">
+              0:58
+            </span>
+<div class="absolute top-2 right-2 w-7 h-7 rounded-full bg-primary-container/90 text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="p-2.5 flex flex-col justify-between flex-1">
+<span class="font-headline-sm text-label-md text-on-surface font-bold line-clamp-2">
+              100m Sprint Record Break: Kinematic Biomechanics Split
+            </span>
+<div class="flex items-center justify-between mt-2 font-label-xs text-label-xs text-on-surface-variant">
+<span>Track & Field</span>
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">visibility</span>
+                14.2k
+              </span>
+</div>
+</div>
+</div>
+<!-- Clip 2 -->
+<div class="flex-shrink-0 w-56 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col group cursor-pointer">
+<div class="relative w-full aspect-[4/3] bg-inverse-surface overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Tactical top-down basketball court play diagram graphic overlaid on a junior point guard setting high pick and roll screen with yellow motion paths and defensive spacing indicators" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT1yNHm1MAEyoLKQKbyv5gR-xVIr6JcSMJvCybn65ipOqikd7FvUpqGQ8c6KTZSBW92C-u2AUG25fHgciQg8kmoJeL-jAnTpBYPdopjcqmYWWQ4x5DJuJvq2yUsfVd-lG6zHzjbDwJiAw0zWYWeqFTA4a50NZw6NeOWNcBmj5lTDn5bRtp59sUV7ifp7vvNcNReusXylH_y1Cm7xydcC4Gpjd7EUOwPQ0UL3wFXlSomoIh-E92GyWfwQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<span class="absolute bottom-2 left-2 px-1.5 py-0.5 rounded bg-on-surface/80 text-on-primary font-label-xs text-label-xs">
+              1:45
+            </span>
+<div class="absolute top-2 right-2 w-7 h-7 rounded-full bg-primary-container/90 text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="p-2.5 flex flex-col justify-between flex-1">
+<span class="font-headline-sm text-label-md text-on-surface font-bold line-clamp-2">
+              Pick-and-Roll Tactical Breakdown: Exploiting Drop Coverage
+            </span>
+<div class="flex items-center justify-between mt-2 font-label-xs text-label-xs text-on-surface-variant">
+<span>Basketball</span>
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">visibility</span>
+                9.8k
+              </span>
+</div>
+</div>
+</div>
+<!-- Clip 3 -->
+<div class="flex-shrink-0 w-56 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col group cursor-pointer">
+<div class="relative w-full aspect-[4/3] bg-inverse-surface overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cricket pace bowler releasing ball with high frame rate slow motion showing wrist alignment, release point trajectory angles, and seam orientation on pristine turf pitch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO91nn8CvyX9wzqEkylfrMjAv52UdjP5w-uI5XkW4qEiwzvy59AJjzqeKl_V-Q1ZEvPPyi2g1dy80MtHUWafP1pzYccj4hcehawW1wdcorZthdtG58YBx8KuwnH1xVvT_djKuSCCi_NnjmdwGuhWcFTnIZxQif1FrQdqGJJPSgYw3l7naFALA4lEmQOfycEI1lb17y6CLXf7O7c5GQ_fiUxtaHogyOD4hF382w-i0J2XfVX-CseiYYaA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<span class="absolute bottom-2 left-2 px-1.5 py-0.5 rounded bg-on-surface/80 text-on-primary font-label-xs text-label-xs">
+              2:10
+            </span>
+<div class="absolute top-2 right-2 w-7 h-7 rounded-full bg-primary-container/90 text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="p-2.5 flex flex-col justify-between flex-1">
+<span class="font-headline-sm text-label-md text-on-surface font-bold line-clamp-2">
+              Fast Bowling Action Analysis: Loading & Ground Force
+            </span>
+<div class="flex items-center justify-between mt-2 font-label-xs text-label-xs text-on-surface-variant">
+<span>Cricket</span>
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">visibility</span>
+                18.5k
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Editorial News Section -->
+<div class="flex flex-col gap-3 mt-5 px-margin-mobile" id="section-news">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[22px]">policy</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Latest Sports News & Federation Bulletins</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+<!-- Lead Editorial Card -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<!-- Tag / Header Row -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed-dim/30 text-secondary font-headline-sm text-label-xs uppercase">
+            Official Bulletin
+          </span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">
+            Football / Regulations
+          </span>
+</div>
+<button class="w-8 h-8 rounded-full hover:bg-surface-container-low flex items-center justify-center text-on-surface-variant transition-colors" onclick="toggleBookmark(this)">
+<span class="material-symbols-outlined text-[20px]">bookmark_border</span>
+</button>
+</div>
+<!-- Lead Headline & Summary -->
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">
+          FIFA & AFC Junior Eligibility Standards Updated for 2025-26 Season
+        </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+          New transfer window limits and physiological test benchmarks officially announced for academy prospects. National federations must comply by Q3.
+        </p>
+</div>
+<!-- Lead Metadata + Action Footer -->
+<div class="pt-2 flex items-center justify-between bg-surface-container-low/50 -mx-4 -mb-4 p-3 px-4 rounded-b-xl">
+<div class="flex items-center gap-2 font-label-xs text-label-xs text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+            3 min read
+          </span>
+<span>•</span>
+<span class="text-secondary font-semibold">Verified Mandate</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-headline-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span>Read Article</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Secondary Story Card -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex items-start gap-3">
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-xs text-label-xs uppercase font-bold">
+            Cricket / Scouting
+          </span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">4 hours ago</span>
+</div>
+<h4 class="font-headline-sm text-label-md text-on-surface font-bold leading-snug line-clamp-2">
+          BCCI Grassroots Talent Scouting Combine Dates Announced across 12 Zonal Hubs
+        </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+          Open registration for certified coaches to nominate state-level pace bowlers and top-order prospects.
+        </p>
+</div>
+<div class="w-20 h-20 rounded-lg bg-surface-container flex-shrink-0 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Young cricket athletes practicing net sessions in morning light with coach observing technique from bowler run up crease" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGipuebsqlxAWU1C993JWQl4xi8VeVX7NMdesDTlQZngOxEM7q2g4Jwp48ZfoVLiyLCAmnpDicdSf6MuBE-eBJsihMO5S7pzBi7AhIJBVHDQtEagDeEHD4F8AzFjqLlGrQpeYNYfwvpVxKsYUM5XVDZ9Sq087Y0F4_6wW3oaxETOd13Ws6x02_brct_A9kps6KHWFUmukgbdDAmQf62dtwHXXfe4pd0b0tnMy26q66i3JzOm8uyqn8uQ"/>
+</div>
+</div>
+<!-- Third Story Card -->
+<div class="bg-surface-container-lowest rounded-xl p-3.5 shadow-sm flex items-start gap-3">
+<div class="flex-1 min-w-0 flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-xs text-label-xs uppercase font-bold">
+            Basketball
+          </span>
+<span class="font-label-xs text-label-xs text-on-surface-variant">6 hours ago</span>
+</div>
+<h4 class="font-headline-sm text-label-md text-on-surface font-bold leading-snug line-clamp-2">
+          National Inter-School Basketball Trophy: 32 High Schools Confirmed for Knockout Stages
+        </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+          Tournament committee releases seedings, bracket pools, and official live-stream broadcast links.
+        </p>
+</div>
+<div class="w-20 h-20 rounded-lg bg-surface-container flex-shrink-0 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="High school varsity basketball team huddled during a timeout with coach drawing tactical plays on clipboard under arena lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcHSUb4Tz7eNcNm_eX5WbS_NOl1ktSkQXDQU4I4BH-cV_VChhkxvVQK8mKw5R3FDtDe9bkQWy3maKNs6mKfTesAUOMdyNYI_bS6vB_lcGxn_Aa_f6wCTR0GM6j0H2YV-U-j5mV9v7Laorm4HIX62ROKDEaAHMtbRqTfZwMVqA2VDsLQxeUKDr99s8ai7pV7VX5VeAtnoAYvyOjEJhyojyfkAYKOfxUcWzyLhOqOJpT5RiSxM1kqAz3xg"/>
+</div>
+</div>
+<!-- Live Wire Feed Ticker -->
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between mt-1">
+<div class="flex items-center gap-2 min-w-0">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-secondary font-bold whitespace-nowrap">Live Wire</span>
+<span class="font-body-sm text-body-sm text-on-surface truncate">
+          World Athletics certifies newly upgraded national sprint track surface in Bangalore.
+        </span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant text-[18px] ml-1 flex-shrink-0">
+        arrow_forward
+      </button>
+</div>
+</div>
+</div>
+<script>
+  function switchSection(target) {
+    const tabHighlights = document.getElementById('tab-highlights');
+    const tabNews = document.getElementById('tab-news');
+    const secHighlights = document.getElementById('section-highlights');
+    const secNews = document.getElementById('section-news');
+
+    if (target === 'highlights') {
+      tabHighlights.className = 'flex-1 py-2 px-3 rounded-full font-headline-sm text-label-md transition-all duration-200 flex items-center justify-center gap-1.5 bg-surface-container-lowest text-primary shadow-sm';
+      tabNews.className = 'flex-1 py-2 px-3 rounded-full font-headline-sm text-label-md transition-all duration-200 flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-on-surface';
+      secHighlights.style.display = 'flex';
+      secNews.style.display = 'flex';
+      secHighlights.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      tabNews.className = 'flex-1 py-2 px-3 rounded-full font-headline-sm text-label-md transition-all duration-200 flex items-center justify-center gap-1.5 bg-surface-container-lowest text-primary shadow-sm';
+      tabHighlights.className = 'flex-1 py-2 px-3 rounded-full font-headline-sm text-label-md transition-all duration-200 flex items-center justify-center gap-1.5 text-on-surface-variant hover:text-on-surface';
+      secNews.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function toggleBookmark(btn) {
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (icon.innerText === 'bookmark_border') {
+      icon.innerText = 'bookmark';
+      icon.style.fontVariationSettings = "'FILL' 1";
+      btn.classList.add('text-primary');
+    } else {
+      icon.innerText = 'bookmark_border';
+      icon.style.fontVariationSettings = "'FILL' 0";
+      btn.classList.remove('text-primary');
+    }
+  }
+
+  // Active pill selector interaction
+  document.querySelectorAll('.sport-pill').forEach(pill => {
+    pill.addEventListener('click', function() {
+      document.querySelectorAll('.sport-pill').forEach(p => {
+        p.className = 'sport-pill px-4 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-surface-container-low text-on-surface-variant hover:bg-surface-container transition-colors flex items-center gap-1.5';
+      });
+      this.className = 'sport-pill px-4 py-1.5 rounded-full font-label-md text-label-md whitespace-nowrap bg-primary-container text-on-primary shadow-sm flex items-center gap-1.5';
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-40 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(19,27,46,0.06)]" data-active-classes="text-primary-container font-bold relative after:content-[''] after:absolute after:bottom-1 after:w-8 after:h-0.5 after:bg-primary-container after:rounded-full"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[24px]">dashboard</span><span class="font-label-xs text-label-xs mt-0.5">Overview</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="tournaments" href="#"><span class="material-symbols-outlined text-[24px]">emoji_events</span><span class="font-label-xs text-label-xs mt-0.5">Tournaments</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="training-workspace" href="#"><span class="material-symbols-outlined text-[24px]">fitness_center</span><span class="font-label-xs text-label-xs mt-0.5">Training</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="rankings-leaderboards" href="#"><span class="material-symbols-outlined text-[24px]">leaderboard</span><span class="font-label-xs text-label-xs mt-0.5">Rankings</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="highlights-news" href="#"><span class="material-symbols-outlined text-[24px]">feed</span><span class="font-label-xs text-label-xs mt-0.5">Highlights</span></a></div></nav></body></html>

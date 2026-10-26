@@ -1,0 +1,6 @@
+{
+  "name": "SportSphere Coach Platform",
+  "description": "High-performance sports coaching intelligence, tournament discovery, athlete telemetry radar, and tactical training dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

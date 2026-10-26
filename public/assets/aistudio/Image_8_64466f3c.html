@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>SportSphere Coach Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#eaedff", "on-primary-container": "#cad3ff", "secondary-fixed-dim": "#6bd8cb", "on-secondary": "#ffffff", "background": "#faf8ff", "tertiary-fixed-dim": "#ffb95f", "surface-tint": "#2151da", "outline-variant": "#c4c5d7", "inverse-on-surface": "#eef0ff", "outline": "#747686", "error-container": "#ffdad6", "on-surface": "#131b2e", "on-tertiary-container": "#ffcb8f", "on-primary": "#ffffff", "tertiary-fixed": "#ffddb8", "secondary-container": "#86f2e4", "on-surface-variant": "#434655", "secondary-fixed": "#89f5e7", "inverse-primary": "#b7c4ff", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-dim": "#d2d9f4", "surface-container-low": "#f2f3ff", "on-primary-fixed-variant": "#0039b5", "on-secondary-fixed": "#00201d", "primary": "#0037b0", "tertiary-container": "#825100", "tertiary": "#623c00", "surface-container-lowest": "#ffffff", "primary-container": "#1d4ed8", "surface-bright": "#faf8ff", "surface-container-high": "#e2e7ff", "on-secondary-fixed-variant": "#005049", "surface-container-highest": "#dae2fd", "on-background": "#131b2e", "inverse-surface": "#283044", "on-tertiary": "#ffffff", "on-tertiary-fixed-variant": "#653e00", "secondary": "#006a61", "primary-fixed-dim": "#b7c4ff", "on-secondary-container": "#006f66", "primary-fixed": "#dce1ff", "surface": "#faf8ff", "surface-variant": "#dae2fd", "on-primary-fixed": "#001551", "on-tertiary-fixed": "#2a1700", "on-error": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-sm": "1rem", "margin": "2rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "1.5rem", "margin-mobile": "1rem", "space-md": "1rem", "space-xl": "2rem" }, "fontFamily": { "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-xs": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "metric-display": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#faf8ff;color:#131b2e;font-family:'Inter',sans-serif;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 4rem);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}input[type="checkbox"]:checked~#drawer-backdrop{display:block;}input[type="checkbox"]:checked~#coach-drawer{transform:translateX(0);}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased"><input class="hidden peer" id="drawer-toggle" type="checkbox"/><div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-50 hidden transition-opacity" id="drawer-backdrop" onclick="document.getElementById('drawer-toggle').checked = false"></div><aside class="fixed top-0 left-0 bottom-0 w-[84%] max-w-[320px] bg-surface-container-lowest z-50 shadow-[0_20px_25px_-5px_rgba(15,23,42,0.12)] -translate-x-full transition-transform duration-300 ease-in-out flex flex-col pt-safe pb-safe" id="coach-drawer"><div class="h-16 px-space-md flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="SportSphere Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vx4lPFMjqJhOe4WCuim2Zz9kJrYrKu5qxaSM8FBLmuIwIXHU16s2_RbR_INUXXuNqCwPkIBID4j_Kx3IvViaVlQNkd28eewYiDWZKK3dSz1PIUWvifN5iTBFu4n6s4Fe-tY4YYzPEEMcyAJupTF9CZznYmObu38EacT-m6EvofF8lTZ1zypn78u1Q-qYeTJU-TFZT2vZDIaDg5tFoWPQwioenJT3qtKj_UTVokhvuWrW3m5XDOfIqoBPKO"/><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">SportSphere</span></div><button class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="document.getElementById('drawer-toggle').checked = false"><span class="material-symbols-outlined text-[24px]">close</span></button></div><div class="px-space-md py-space-sm bg-surface-container-low flex items-center gap-space-sm mx-space-md rounded-xl my-space-xs"><div class="relative flex-shrink-0"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center overflow-hidden"><span class="material-symbols-outlined text-on-primary text-[22px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim ring-2 ring-surface-container-lowest"></span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-label-md text-on-surface font-bold truncate">Coach Marcus Vance</span><span class="font-label-xs text-label-xs text-secondary font-semibold uppercase tracking-wider">High Performance Lead</span></div></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm space-y-space-xs"><p class="px-space-sm font-label-xs text-label-xs font-bold text-outline uppercase tracking-wider mb-space-xs">Coach Navigation</p><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md font-medium">Overview</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="highlights" href="#"><span class="material-symbols-outlined text-[20px]">movie</span><span class="font-label-md text-label-md font-medium">Highlights</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="sports-news" href="#"><span class="material-symbols-outlined text-[20px]">newspaper</span><span class="font-label-md text-label-md font-medium">Sports News</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="tournaments" href="#"><span class="material-symbols-outlined text-[20px]">emoji_events</span><span class="font-label-md text-label-md font-medium">Tournaments</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="athletes-network" href="#"><span class="material-symbols-outlined text-[20px]">diversity_3</span><span class="font-label-md text-label-md font-medium">Network</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="rankings" href="#"><span class="material-symbols-outlined text-[20px]">leaderboard</span><span class="font-label-md text-label-md font-medium">Rankings</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="radar" href="#"><span class="material-symbols-outlined text-[20px]">radar</span><span class="font-label-md text-label-md font-medium">Performance Radar</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="my-athletes" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-md text-label-md font-medium">My Athletes</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="training" href="#"><span class="material-symbols-outlined text-[20px]">fitness_center</span><span class="font-label-md text-label-md font-medium">Training</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="coach-profile" href="#"><span class="material-symbols-outlined text-[20px]">account_circle</span><span class="font-label-md text-label-md font-medium">Profile</span></a></div></aside><header class="fixed top-0 w-full z-40 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-space-md flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><label class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" for="drawer-toggle"><span class="material-symbols-outlined text-[24px]">menu</span></label><img alt="SportSphere Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vx4lPFMjqJhOe4WCuim2Zz9kJrYrKu5qxaSM8FBLmuIwIXHU16s2_RbR_INUXXuNqCwPkIBID4j_Kx3IvViaVlQNkd28eewYiDWZKK3dSz1PIUWvifN5iTBFu4n6s4Fe-tY4YYzPEEMcyAJupTF9CZznYmObu38EacT-m6EvofF8lTZ1zypn78u1Q-qYeTJU-TFZT2vZDIaDg5tFoWPQwioenJT3qtKj_UTVokhvuWrW3m5XDOfIqoBPKO"/><span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight hidden xs:inline">Athletes Network</span></div><div class="flex items-center bg-surface-container-high p-0.5 rounded-full"><span class="px-2 py-0.5 text-label-xs font-headline-sm font-semibold text-outline-variant hover:text-on-surface transition-colors cursor-pointer">Ath</span><span class="px-2 py-0.5 text-label-xs font-headline-sm font-semibold text-outline-variant hover:text-on-surface transition-colors cursor-pointer">Org</span><span class="px-2.5 py-1 text-label-xs font-headline-sm font-bold text-on-primary bg-primary-container rounded-full shadow-[0_1px_3px_0_rgba(15,23,42,0.1)]">Coach</span></div><div class="flex items-center gap-0.5"><button class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></button><button class="relative w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="relative flex-shrink-0 ml-1"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim ring-2 ring-surface"></span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight">Scouting & Pro Network</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Connect, scout, and collaborate across high-performance sports</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim"></span>
+<span class="font-label-xs text-label-xs font-bold text-secondary uppercase tracking-wider">Live Hub</span>
+</div>
+</div>
+<!-- Network Category Filter Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1 -mx-space-md px-space-md">
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold shadow-sm transition-transform active:scale-95">All (1.4k)</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-on-surface active:scale-95 transition-all">Athletes & Prospects</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-on-surface active:scale-95 transition-all">Coaches</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-on-surface active:scale-95 transition-all">Scouts & Evaluators</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-on-surface active:scale-95 transition-all">Sports Academies</button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium hover:text-on-surface active:scale-95 transition-all">Organizers</button>
+</div>
+</div>
+<div class="p-space-md space-y-space-md">
+<!-- Search & Quick Filters -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm space-y-space-sm">
+<div class="relative flex items-center bg-surface-container-low rounded-lg px-space-sm">
+<span class="material-symbols-outlined text-outline text-[20px] mr-2">search</span>
+<input class="w-full bg-transparent py-2.5 text-on-surface placeholder-outline font-body-sm text-body-sm focus:outline-none" placeholder="Search by name, sport, specialization, club..." type="text"/>
+<button aria-label="Tune Search" class="w-7 h-7 flex items-center justify-center rounded-md bg-surface-container-high text-on-surface-variant ml-1 hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar pb-1">
+<button class="flex-shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-xs text-label-xs font-semibold active:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[14px]">sports_soccer</span>
+          Uncommitted Prospects
+        </button>
+<button class="flex-shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-xs text-label-xs font-medium hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+          Verified Academies
+        </button>
+<button class="flex-shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-xs text-label-xs font-medium hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[14px]">near_me</span>
+          Within 50 miles
+        </button>
+<button class="flex-shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-xs text-label-xs font-medium hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[14px]">group</span>
+          Mutual Connections
+        </button>
+</div>
+</div>
+<!-- Connection Requests & Opportunities Widget -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden" id="pending-section">
+<div class="p-space-sm bg-surface-container-low flex items-center justify-between cursor-pointer" onclick="document.getElementById('requests-accordion').classList.toggle('hidden'); document.getElementById('accordion-chevron').classList.toggle('rotate-180');">
+<div class="flex items-center gap-space-xs">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-xs text-label-xs font-bold">2</div>
+<span class="font-headline-sm text-label-md text-on-surface font-bold">Pending Connection Requests</span>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" id="accordion-chevron">expand_more</span>
+</div>
+<div class="p-space-sm space-y-space-sm" id="requests-accordion">
+<!-- Request 1 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-space-sm" id="request-item-1">
+<div class="flex items-start gap-space-sm">
+<img class="w-11 h-11 rounded-full object-cover flex-shrink-0 bg-surface-container-high" data-alt="Athletic portrait of a male track and field director in blue athletic windbreaker with stopwatch and warm outdoor stadium background in crisp documentary sports photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD5g96_fNZh5lVXAm5IXiRipHo8O4pF7nGN5Kmp9Zje5mfhShMab7Y8GzF1TSTktYamWUU_SG6p0zFtSbvjUlkgK1AawjmDYeK71baegL1Em3hzjPlvdqBvfOrbMPHlS-qwJReCFYQTk5OUbDWZPqaMEtnlvuDC5bHbDMq74V4J50Qgi3qhXGh5DR0Sdm-_ECn_eHjZcAEbpgcQMnRTL4YL32snLPUwmM12urclFxG3nqTV9CdO5zPeA"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<p class="font-headline-sm text-label-md text-on-surface font-bold truncate">Coach David O'Connor</p>
+<span class="font-label-xs text-label-xs text-outline font-medium">2h ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Track & Field Director • St. Patrick's</p>
+<div class="flex items-center gap-1 mt-0.5 text-secondary">
+<span class="material-symbols-outlined text-[14px]">diversity_3</span>
+<span class="font-label-xs text-label-xs">5 mutual connections including Coach Vance</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-xs pt-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold hover:bg-surface-container active:scale-95 transition-all" onclick="document.getElementById('request-item-1').remove()">Decline</button>
+<button class="px-4 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold shadow-sm active:scale-95 transition-all" onclick="this.textContent='Accepted'; this.disabled=true; this.classList.replace('bg-primary-container','bg-secondary');">Accept</button>
+</div>
+</div>
+<!-- Request 2 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg flex flex-col gap-space-sm" id="request-item-2">
+<div class="flex items-start gap-space-sm">
+<img class="w-11 h-11 rounded-full object-cover flex-shrink-0 bg-surface-container-high" data-alt="Close-up professional portrait of an elite female sports talent scout wearing a navy tactical coaching vest looking attentively at field data during dusk lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALb0_Kct8VMNqfMHeSow7YM-uZZIYG3CzI7I1vQx0V_AHUssE8MWazNCEzuKHbgULcRFG2rmy1NqnbgJq0rRKrns3PxNwfZgTLzGE4uQO0CmDyJEcMzFjoFZ7HS41AWT6Q42l2D--T-1ZHUKcQEAi4003U5iqWEYtyRopylumFcGDgdqLfACIeb97iIpsAN2lIhFpRGuL-1BIpT1wZOqzHpkwfTDjAPMwZd8qe86-C-kc_90G7PEfjCQ"/>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<p class="font-headline-sm text-label-md text-on-surface font-bold truncate">Marcus Thorne</p>
+<span class="font-label-xs text-label-xs text-outline font-medium">1d ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Senior Scout • Elite Scouting Network</p>
+<div class="flex items-center gap-1 mt-0.5 text-outline">
+<span class="material-symbols-outlined text-[14px]">sports</span>
+<span class="font-label-xs text-label-xs">Recruiting for National Combine Invitationals</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-xs pt-1">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold hover:bg-surface-container active:scale-95 transition-all">View Profile</button>
+<button class="px-4 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold shadow-sm active:scale-95 transition-all" onclick="this.textContent='Accepted'; this.disabled=true; this.classList.replace('bg-primary-container','bg-secondary');">Accept</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Professional Profile Cards (Sports networking feed) -->
+<div class="space-y-space-md">
+<!-- Card 1: Athlete Prospect -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative flex-shrink-0">
+<img class="w-14 h-14 rounded-full object-cover bg-surface-container-high" data-alt="High quality athletic portrait of a young male soccer player with focused determination dressed in a white and gold training kit under golden hour outdoor field lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0lU12hOXfVr7ztlEdhSFZoSi-7ldw0yFWJv1aBYUtQl1sDqsn_f3kUEWwZnAUaua22qkFjIfeWtceNdO86Peq8nm3hYrrA4GXVyoi-rx7neCQiiZMSpJe7-BzAl7sZ3l67yZTPc3kdfQtDT0Au6tqxFnWvJQ8PUuapHXDJGmwCgPc2dAvfjod5xnpN0ZnjU-Z0hvo_BNUMjOUMTWscU6WRawJQQRUD-hG_tbRsMZSdp2I6o9aKXjkQA"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm" title="Verified Athlete">
+<span class="material-symbols-outlined text-[12px]">verified</span>
+</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-label-md text-on-surface font-bold truncate">Mateo Rossi</h2>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-xs text-label-xs font-semibold">18y</span>
+</div>
+<p class="font-label-sm text-label-sm text-primary font-semibold truncate">Attacking Midfielder • U19 State Champions</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Lone Star Youth Academy • Dallas, TX</p>
+</div>
+</div>
+<button aria-label="Bookmark Profile" class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors" onclick="this.querySelector('span').classList.toggle('text-primary'); this.querySelector('span').style.fontVariationSettings = this.querySelector('span').style.fontVariationSettings.includes('1') ? `'FILL' 0` : `'FILL' 1`;">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+</div>
+<!-- Key Stats Grid -->
+<div class="grid grid-cols-2 gap-space-xs bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline font-semibold uppercase tracking-wider">Performance 2025</span>
+<span class="font-headline-sm text-label-md text-on-surface font-extrabold">14 Goals, 9 Assists</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-label-xs text-outline font-semibold uppercase tracking-wider">Academics</span>
+<span class="font-headline-sm text-label-md text-on-surface font-extrabold">4.2 GPA (AP Scholar)</span>
+</div>
+<div class="col-span-2 pt-1 flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[15px]">flag</span>
+<span class="font-label-xs text-label-xs font-bold uppercase tracking-wider">Available for 2026 Collegiate Recruitment</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline">group</span>
+<span class="font-body-sm text-body-sm">3 mutual coach connections in Texas Conference</span>
+</div>
+<!-- Card Actions -->
+<div class="flex items-center gap-space-xs pt-1">
+<button class="flex-1 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-1 shadow-sm active:scale-95 transition-all" onclick="this.innerHTML='<span class=\'material-symbols-outlined text-[18px]\'>schedule</span> Requested'; this.classList.replace('bg-primary-container','bg-surface-container-high'); this.classList.replace('text-on-primary','text-on-surface-variant'); this.disabled=true;">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+              Connect
+            </button>
+<button class="px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container active:scale-95 transition-colors">
+              View Profile
+            </button>
+</div>
+</div>
+</article>
+<!-- Card 2: Collegiate Scout -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative flex-shrink-0">
+<img class="w-14 h-14 rounded-full object-cover bg-surface-container-high" data-alt="Confident sports portrait of a female collegiate track and field coach holding a digital tablet with training statistics on a bright collegiate stadium track field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtcWZfLL3_1L-ckZtJuvebQyIBGCkO51Y5pEMSRzkm7-0OeLN3Qlz_uPHoRM99AO7uqBwCA_JrWyUExDiTcbukaZ3l5Y3ywdN_OZdMjNjZbqMTh6zj-Cg5DjAtIQOejBtnRXChSZG6oGdNqwIZdsFatlyKsRyz3sr9TRldO80podDkyKlHkViXj6GKBWD2IQKxJyrfwH2o-4n8GPNZ7tFfGcHwIWGkoLdff88sJEC2sZ-IuYtMQIepZQ"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-sm" title="Collegiate Scout">
+<span class="material-symbols-outlined text-[12px]">school</span>
+</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-label-md text-on-surface font-bold truncate">Coach Sarah Jenkins</h2>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Lead Talent Scout</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Midwest Collegiate Athletic Conference</p>
+</div>
+</div>
+<button aria-label="Bookmark Profile" class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors" onclick="this.querySelector('span').classList.toggle('text-primary'); this.querySelector('span').style.fontVariationSettings = this.querySelector('span').style.fontVariationSettings.includes('1') ? `'FILL' 0` : `'FILL' 1`;">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</button>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-xs text-label-xs font-semibold">Athletics & Track</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-xs text-label-xs font-semibold">Sprint Specialist</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-xs text-label-xs font-bold">NCAA Div I</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface bg-surface-container-low p-space-sm rounded-lg">
+            "Actively scouting 100m/200m sprinters for 2026 scholarship programs. Prioritizing explosive starts and verified race splits."
+          </p>
+<!-- Card Actions with Pending State -->
+<div class="flex items-center justify-between pt-1">
+<div class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-outline">hourglass_top</span>
+              Connection Requested
+            </div>
+<button class="px-4 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container active:scale-95 transition-colors">
+              Message
+            </button>
+</div>
+</div>
+</article>
+<!-- Card 3: Certified Academy -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-14 h-14 rounded-xl bg-surface-container-highest flex items-center justify-center flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-[32px]">sports_volleyball</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<h2 class="font-headline-sm text-label-md text-on-surface font-bold truncate">Apex High Performance Institute</h2>
+<span class="material-symbols-outlined text-secondary text-[16px]" title="Certified Academy">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Multi-sport training facility & tournament host</p>
+<div class="flex items-center gap-1 text-outline font-label-xs text-label-xs mt-0.5">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>Austin, TX • 18 Facilities</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Highlight Preview Strip -->
+<div class="grid grid-cols-3 gap-space-xs pt-1">
+<div class="bg-surface-container-low rounded-lg p-2 text-center">
+<p class="font-headline-sm text-label-md text-on-surface font-extrabold">320+</p>
+<p class="font-label-xs text-label-xs text-outline font-medium">Ranked Athletes</p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 text-center">
+<p class="font-headline-sm text-label-md text-on-surface font-extrabold">12</p>
+<p class="font-label-xs text-label-xs text-outline font-medium">Annual Combines</p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2 text-center">
+<p class="font-headline-sm text-label-md text-on-surface font-extrabold">98%</p>
+<p class="font-label-xs text-label-xs text-outline font-medium">College Placement</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center -space-x-2">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary font-label-xs text-label-xs font-bold flex items-center justify-center ring-2 ring-surface-container-lowest">MV</div>
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary font-label-xs text-label-xs font-bold flex items-center justify-center ring-2 ring-surface-container-lowest">SJ</div>
+<div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs font-bold flex items-center justify-center ring-2 ring-surface-container-lowest">+14</div>
+<span class="pl-3 font-body-sm text-body-sm text-outline">coaches following</span>
+</div>
+<button class="px-4 py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold active:scale-95 transition-all" onclick="this.classList.toggle('bg-primary-container'); this.classList.toggle('text-on-primary'); this.classList.toggle('bg-surface-container-high'); this.classList.toggle('text-on-surface-variant'); this.textContent = this.textContent === 'Following' ? 'Follow' : 'Following';">
+              Follow
+            </button>
+</div>
+</div>
+</article>
+</div>
+<!-- Bottom Quick Action: Invite with Share Link -->
+<section class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">fitbit_push_ups</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-label-md text-on-surface font-bold">Invite Athlete or Coach to Network</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Expand your scouting circle with verified direct credentials.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs mt-1">
+<div class="flex-1 bg-surface-container-lowest px-3 py-2 rounded-lg font-body-sm text-body-sm text-outline truncate select-all">
+          sportsphere.pro/invite/coach-marcus-vance
+        </div>
+<button class="px-3.5 py-2 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold flex items-center gap-1 shadow-sm active:scale-95 transition-all" onclick="navigator.clipboard && navigator.clipboard.writeText('https://sportsphere.pro/invite/coach-marcus-vance'); const btn=this; btn.innerHTML='<span class=\'material-symbols-outlined text-[16px]\'>check</span> Copied'; setTimeout(()=>{btn.innerHTML='<span class=\'material-symbols-outlined text-[16px]\'>content_copy</span> Copy';}, 2000);">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+          Copy
+        </button>
+</div>
+<p class="font-label-xs text-label-xs text-outline text-center mt-0.5">
+        FERPA & SafeSport privacy-compliant invitation pipeline.
+      </p>
+</section>
+</div>
+</div></main><nav class="fixed bottom-0 w-full z-40 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(19,27,46,0.06)]" data-active-classes="text-primary-container font-bold relative after:content-[''] after:absolute after:bottom-1 after:w-8 after:h-0.5 after:bg-primary-container after:rounded-full"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-xs text-label-xs mt-0.5">Overview</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="tournaments" href="#"><span class="material-symbols-outlined text-[24px]">emoji_events</span><span class="font-label-xs text-label-xs mt-0.5">Tournaments</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="highlights" href="#"><span class="material-symbols-outlined text-[24px]">play_circle</span><span class="font-label-xs text-label-xs mt-0.5">Highlights</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="radar" href="#"><span class="material-symbols-outlined text-[24px]">radar</span><span class="font-label-xs text-label-xs mt-0.5">Radar</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-14 transition-colors text-primary-container font-bold relative after:content-[''] after:absolute after:bottom-1 after:w-8 after:h-0.5 after:bg-primary-container after:rounded-full" data-path="athletes-network" href="#"><span class="material-symbols-outlined text-[24px]">groups</span><span class="font-label-xs text-label-xs mt-0.5">Athletes</span></a></div></nav></body></html>

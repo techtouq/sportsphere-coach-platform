@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>SportSphere Coach Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#eaedff", "on-primary-container": "#cad3ff", "secondary-fixed-dim": "#6bd8cb", "on-secondary": "#ffffff", "background": "#faf8ff", "tertiary-fixed-dim": "#ffb95f", "surface-tint": "#2151da", "outline-variant": "#c4c5d7", "inverse-on-surface": "#eef0ff", "outline": "#747686", "error-container": "#ffdad6", "on-surface": "#131b2e", "on-tertiary-container": "#ffcb8f", "on-primary": "#ffffff", "tertiary-fixed": "#ffddb8", "secondary-container": "#86f2e4", "on-surface-variant": "#434655", "secondary-fixed": "#89f5e7", "inverse-primary": "#b7c4ff", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-dim": "#d2d9f4", "surface-container-low": "#f2f3ff", "on-primary-fixed-variant": "#0039b5", "on-secondary-fixed": "#00201d", "primary": "#0037b0", "tertiary-container": "#825100", "tertiary": "#623c00", "surface-container-lowest": "#ffffff", "primary-container": "#1d4ed8", "surface-bright": "#faf8ff", "surface-container-high": "#e2e7ff", "on-secondary-fixed-variant": "#005049", "surface-container-highest": "#dae2fd", "on-background": "#131b2e", "inverse-surface": "#283044", "on-tertiary": "#ffffff", "on-tertiary-fixed-variant": "#653e00", "secondary": "#006a61", "primary-fixed-dim": "#b7c4ff", "on-secondary-container": "#006f66", "primary-fixed": "#dce1ff", "surface": "#faf8ff", "surface-variant": "#dae2fd", "on-primary-fixed": "#001551", "on-tertiary-fixed": "#2a1700", "on-error": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-sm": "1rem", "margin": "2rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "1.5rem", "margin-mobile": "1rem", "space-md": "1rem", "space-xl": "2rem" }, "fontFamily": { "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-xs": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "metric-display": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#faf8ff;color:#131b2e;font-family:'Inter',sans-serif;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 4rem);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}input[type="checkbox"]:checked~#drawer-backdrop{display:block;}input[type="checkbox"]:checked~#coach-drawer{transform:translateX(0);}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased"><input class="hidden peer" id="drawer-toggle" type="checkbox"/><div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-50 hidden transition-opacity" id="drawer-backdrop" onclick="document.getElementById('drawer-toggle').checked = false"></div><aside class="fixed top-0 left-0 bottom-0 w-[84%] max-w-[320px] bg-surface-container-lowest z-50 shadow-[0_20px_25px_-5px_rgba(15,23,42,0.12)] -translate-x-full transition-transform duration-300 ease-in-out flex flex-col pt-safe pb-safe" id="coach-drawer"><div class="h-16 px-space-md flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="SportSphere Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vx4lPFMjqJhOe4WCuim2Zz9kJrYrKu5qxaSM8FBLmuIwIXHU16s2_RbR_INUXXuNqCwPkIBID4j_Kx3IvViaVlQNkd28eewYiDWZKK3dSz1PIUWvifN5iTBFu4n6s4Fe-tY4YYzPEEMcyAJupTF9CZznYmObu38EacT-m6EvofF8lTZ1zypn78u1Q-qYeTJU-TFZT2vZDIaDg5tFoWPQwioenJT3qtKj_UTVokhvuWrW3m5XDOfIqoBPKO"/><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">SportSphere</span></div><button class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="document.getElementById('drawer-toggle').checked = false"><span class="material-symbols-outlined text-[24px]">close</span></button></div><div class="px-space-md py-space-sm bg-surface-container-low flex items-center gap-space-sm mx-space-md rounded-xl my-space-xs"><div class="relative flex-shrink-0"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center overflow-hidden"><span class="material-symbols-outlined text-on-primary text-[22px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim ring-2 ring-surface-container-lowest"></span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-label-md text-on-surface font-bold truncate">Coach Marcus Vance</span><span class="font-label-xs text-label-xs text-secondary font-semibold uppercase tracking-wider">High Performance Lead</span></div></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm space-y-space-xs"><p class="px-space-sm font-label-xs text-label-xs font-bold text-outline uppercase tracking-wider mb-space-xs">Coach Navigation</p><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md font-medium">Overview</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="highlights" href="#"><span class="material-symbols-outlined text-[20px]">movie</span><span class="font-label-md text-label-md font-medium">Highlights</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="sports-news" href="#"><span class="material-symbols-outlined text-[20px]">newspaper</span><span class="font-label-md text-label-md font-medium">Sports News</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="tournaments" href="#"><span class="material-symbols-outlined text-[20px]">emoji_events</span><span class="font-label-md text-label-md font-medium">Tournaments</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="athletes-network" href="#"><span class="material-symbols-outlined text-[20px]">diversity_3</span><span class="font-label-md text-label-md font-medium">Network</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="rankings" href="#"><span class="material-symbols-outlined text-[20px]">leaderboard</span><span class="font-label-md text-label-md font-medium">Rankings</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="radar" href="#"><span class="material-symbols-outlined text-[20px]">radar</span><span class="font-label-md text-label-md font-medium">Performance Radar</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="my-athletes" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-md text-label-md font-medium">My Athletes</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="training" href="#"><span class="material-symbols-outlined text-[20px]">fitness_center</span><span class="font-label-md text-label-md font-medium">Training</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="coach-profile" href="#"><span class="material-symbols-outlined text-[20px]">account_circle</span><span class="font-label-md text-label-md font-medium">Profile</span></a></div></aside><header class="fixed top-0 w-full z-40 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-space-md flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><label class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" for="drawer-toggle"><span class="material-symbols-outlined text-[24px]">menu</span></label><img alt="SportSphere Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vx4lPFMjqJhOe4WCuim2Zz9kJrYrKu5qxaSM8FBLmuIwIXHU16s2_RbR_INUXXuNqCwPkIBID4j_Kx3IvViaVlQNkd28eewYiDWZKK3dSz1PIUWvifN5iTBFu4n6s4Fe-tY4YYzPEEMcyAJupTF9CZznYmObu38EacT-m6EvofF8lTZ1zypn78u1Q-qYeTJU-TFZT2vZDIaDg5tFoWPQwioenJT3qtKj_UTVokhvuWrW3m5XDOfIqoBPKO"/><span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight hidden xs:inline">Radar</span></div><div class="flex items-center bg-surface-container-high p-0.5 rounded-full"><span class="px-2 py-0.5 text-label-xs font-headline-sm font-semibold text-outline-variant hover:text-on-surface transition-colors cursor-pointer">Ath</span><span class="px-2 py-0.5 text-label-xs font-headline-sm font-semibold text-outline-variant hover:text-on-surface transition-colors cursor-pointer">Org</span><span class="px-2.5 py-1 text-label-xs font-headline-sm font-bold text-on-primary bg-primary-container rounded-full shadow-[0_1px_3px_0_rgba(15,23,42,0.1)]">Coach</span></div><div class="flex items-center gap-0.5"><button class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></button><button class="relative w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="relative flex-shrink-0 ml-1"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim ring-2 ring-surface"></span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full px-space-md py-space-sm space-y-space-md">
+<!-- ATHLETE SELECTOR & PROFILE SUMMARY -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative flex-shrink-0">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="High resolution sports portrait of Leo Sterling, athletic young male soccer forward in sleek navy and white kit, direct focused gaze, subtle studio rim lighting on clean light background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB75JciHHWikOZrNjhw0YAGatvturcJrZfq66hH5EVv-yyn8NIMrRseyTgeRSUkp1pWHc9Xf-ZqqGgsmK1_S2ZAFm1hFHTPNkNFq_x8FCMBh75A2pNyhdG-UP_bwR6Pvt0ihf35y_RfSOtMQp2P5BcHn_rnwPIRi3hlUjJKRFgz5GnJB4YGUF63Fbpmp-CC86s6cauFGe7xk81ojhff5BU362JL4LXjg87xLt8PaN-KP4_UHGd0J1LiA"/>
+<span class="absolute -bottom-1 -right-1 bg-primary text-on-primary font-headline-sm text-label-xs px-1.5 py-0.5 rounded-full shadow-sm">#9</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Leo Sterling</h2>
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Forward • U19 Elite Academy</p>
+</div>
+</div>
+<button aria-label="Change Athlete" class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors" id="athlete-dropdown-btn">
+<span class="material-symbols-outlined text-[20px]">unfold_more</span>
+</button>
+</div>
+<!-- Assessment Metadata Badge -->
+<div class="flex items-center justify-between bg-surface-container-low px-space-sm py-2 rounded-lg">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Oct 12, 2025 • Marcus Vance</span>
+</div>
+<span class="font-label-xs text-label-xs bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-bold">Validated</span>
+</div>
+<!-- Comparison Segmented Control -->
+<div class="mt-space-sm p-1 bg-surface-container rounded-lg flex items-center gap-1">
+<button class="flex-1 py-1.5 px-2 rounded-md font-label-sm text-label-sm font-bold bg-surface-container-lowest text-on-surface shadow-sm transition-all text-center" id="toggle-team">
+        vs. Team Avg
+      </button>
+<button class="flex-1 py-1.5 px-2 rounded-md font-label-sm text-label-sm font-medium text-on-surface-variant hover:text-on-surface transition-all text-center" id="toggle-prev">
+        vs. Aug 2025
+      </button>
+</div>
+</div>
+<!-- RADAR VISUALIZATION MODULE -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<!-- Header metric overview -->
+<div class="flex items-center justify-between mb-space-xs">
+<div>
+<span class="font-label-xs text-label-xs uppercase tracking-wider text-outline font-bold">Comprehensive Radar</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl-mobile text-headline-xl-mobile font-extrabold text-primary">88.3</span>
+<span class="font-label-xs text-label-xs text-secondary font-bold bg-secondary-container px-1.5 py-0.5 rounded">+3.8 percentile</span>
+</div>
+</div>
+<!-- Legends -->
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-xs text-label-xs font-semibold text-on-surface">Leo S.</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-0.5 bg-outline"></span>
+<span class="font-label-xs text-label-xs text-on-surface-variant" id="legend-comp-label">U19 Squad (79.4)</span>
+</div>
+</div>
+</div>
+<!-- SVG Radar Canvas Container -->
+<div class="relative w-full aspect-square max-w-[340px] mx-auto my-space-xs flex items-center justify-center">
+<svg class="w-full h-full overflow-visible select-none" id="radar-chart" viewbox="-170 -170 340 340">
+<!-- Circular/Polygonal Reference Rings (20, 40, 60, 80, 100) -->
+<!-- Hexagon 20 -->
+<polygon fill="none" points="0,-26 22.5,-13 22.5,13 0,26 -22.5,13 -22.5,-13" stroke="#eaedff" stroke-dasharray="2 2" stroke-width="1.2"></polygon>
+<!-- Hexagon 40 -->
+<polygon fill="none" points="0,-52 45,-26 45,26 0,52 -45,26 -45,-26" stroke="#eaedff" stroke-width="1.2"></polygon>
+<!-- Hexagon 60 -->
+<polygon fill="none" points="0,-78 67.5,-39 67.5,39 0,78 -67.5,39 -67.5,-39" stroke="#eaedff" stroke-dasharray="2 2" stroke-width="1.2"></polygon>
+<!-- Hexagon 80 -->
+<polygon fill="none" points="0,-104 90,-52 90,52 0,104 -90,52 -90,-52" stroke="#dae2fd" stroke-width="1.2"></polygon>
+<!-- Hexagon 100 Outer Boundary -->
+<polygon fill="#faf8ff" fill-opacity="0.4" points="0,-130 112.6,-65 112.6,65 0,130 -112.6,65 -112.6,-65" stroke="#c4c5d7" stroke-width="1.5"></polygon>
+<!-- Spoke Axes -->
+<line stroke="#dae2fd" stroke-width="1.2" x1="0" x2="0" y1="0" y2="-130"></line>
+<line stroke="#dae2fd" stroke-width="1.2" x1="0" x2="112.6" y1="0" y2="-65"></line>
+<line stroke="#dae2fd" stroke-width="1.2" x1="0" x2="112.6" y1="0" y2="65"></line>
+<line stroke="#dae2fd" stroke-width="1.2" x1="0" x2="0" y1="0" y2="130"></line>
+<line stroke="#dae2fd" stroke-width="1.2" x1="0" x2="-112.6" y1="0" y2="65"></line>
+<line stroke="#dae2fd" stroke-width="1.2" x1="0" x2="-112.6" y1="0" y2="-65"></line>
+<!-- Overlay Polygon: Team Average (Comparison) -->
+<!-- Speed: 80, Endurance: 78, Strength: 80, Agility: 77, Technique: 82, Consistency: 79 -->
+<polygon class="transition-all duration-300" fill="#434655" fill-opacity="0.08" id="comp-poly" points="0,-104 87.8,-50.7 87.8,50.7 0,100.1 -86.7,50.1 -86.7,-50.1" stroke="#747686" stroke-dasharray="4 3" stroke-linejoin="round" stroke-width="1.8"></polygon>
+<!-- Overlay Polygon: Leo Sterling -->
+<!-- 1. Speed (Top): 94 -> (0, -122.2) -->
+<!-- 2. Agility (Top-Right): 91 -> (91*1.126 = 102.5, -59.1) -->
+<!-- 3. Technique (Bot-Right): 89 -> (89*1.126 = 100.2, 57.8) -->
+<!-- 4. Consistency (Bottom): 88 -> (0, 114.4) -->
+<!-- 5. Strength (Bot-Left): 82 -> (-92.3, 53.3) -->
+<!-- 6. Endurance (Top-Left): 86 -> (-96.8, -55.9) -->
+<polygon fill="#1d4ed8" fill-opacity="0.22" id="athlete-poly" points="0,-122.2 102.5,-59.1 100.2,57.8 0,114.4 -92.3,53.3 -96.8,-55.9" stroke="#1d4ed8" stroke-linejoin="round" stroke-width="2.5"></polygon>
+<!-- Athlete Vertex Knots -->
+<circle class="cursor-pointer" cx="0" cy="-122.2" fill="#ffffff" onclick="showTip('Speed', 94, '34.8 km/h peak transition speed', '+3.2% vs Aug')" r="4.5" stroke="#1d4ed8" stroke-width="2.5"></circle>
+<circle class="cursor-pointer" cx="102.5" cy="-59.1" fill="#ffffff" onclick="showTip('Agility', 91, 'Pro-Agility 5-10-5: 4.12s reactive cut', '+1.8% vs Aug')" r="4.5" stroke="#1d4ed8" stroke-width="2.5"></circle>
+<circle class="cursor-pointer" cx="100.2" cy="57.8" fill="#ffffff" onclick="showTip('Technique', 89, '88% passing accuracy in attacking third', 'Stable')" r="4.5" stroke="#1d4ed8" stroke-width="2.5"></circle>
+<circle class="cursor-pointer" cx="0" cy="114.4" fill="#ffffff" onclick="showTip('Consistency', 88, 'Rating variance < 4.2% across 8 matches', '+0.9% vs Aug')" r="4.5" stroke="#1d4ed8" stroke-width="2.5"></circle>
+<circle class="cursor-pointer" cx="-92.3" cy="53.3" fill="#ffffff" onclick="showTip('Strength', 82, 'Trap-bar DL 2.1x BW power transfer', '-0.5% vs Aug')" r="4.5" stroke="#1d4ed8" stroke-width="2.5"></circle>
+<circle class="cursor-pointer" cx="-96.8" cy="-55.9" fill="#ffffff" onclick="showTip('Endurance', 86, 'Yo-Yo Intermittent Recovery Level 2: 2,120m', '+4.5% vs Aug')" r="4.5" stroke="#1d4ed8" stroke-width="2.5"></circle>
+<!-- Axis Labels & Score Badges -->
+<!-- Speed -->
+<g class="cursor-pointer" onclick="showTip('Speed', 94, '34.8 km/h peak transition speed', '+3.2% vs Aug')">
+<text fill="#131b2e" font-family="Plus Jakarta Sans" font-size="11" font-weight="700" text-anchor="middle" x="0" y="-142">Speed</text>
+<rect fill="#eaedff" height="15" rx="4" width="28" x="-14" y="-160"></rect>
+<text fill="#0037b0" font-family="Plus Jakarta Sans" font-size="9" font-weight="800" text-anchor="middle" x="0" y="-149">94</text>
+</g>
+<!-- Agility -->
+<g class="cursor-pointer" onclick="showTip('Agility', 91, 'Pro-Agility 5-10-5: 4.12s reactive cut', '+1.8% vs Aug')">
+<text fill="#131b2e" font-family="Plus Jakarta Sans" font-size="11" font-weight="700" text-anchor="start" x="122" y="-62">Agility</text>
+<rect fill="#eaedff" height="15" rx="4" width="28" x="122" y="-56"></rect>
+<text fill="#0037b0" font-family="Plus Jakarta Sans" font-size="9" font-weight="800" text-anchor="middle" x="136" y="-45">91</text>
+</g>
+<!-- Technique -->
+<g class="cursor-pointer" onclick="showTip('Technique', 89, '88% passing accuracy in attacking third', 'Stable')">
+<text fill="#131b2e" font-family="Plus Jakarta Sans" font-size="11" font-weight="700" text-anchor="start" x="118" y="70">Technique</text>
+<rect fill="#eaedff" height="15" rx="4" width="28" x="118" y="76"></rect>
+<text fill="#0037b0" font-family="Plus Jakarta Sans" font-size="9" font-weight="800" text-anchor="middle" x="132" y="87">89</text>
+</g>
+<!-- Consistency -->
+<g class="cursor-pointer" onclick="showTip('Consistency', 88, 'Rating variance < 4.2% across 8 matches', '+0.9% vs Aug')">
+<text fill="#131b2e" font-family="Plus Jakarta Sans" font-size="11" font-weight="700" text-anchor="middle" x="0" y="145">Consistency</text>
+<rect fill="#eaedff" height="15" rx="4" width="28" x="-14" y="150"></rect>
+<text fill="#0037b0" font-family="Plus Jakarta Sans" font-size="9" font-weight="800" text-anchor="middle" x="0" y="161">88</text>
+</g>
+<!-- Strength -->
+<g class="cursor-pointer" onclick="showTip('Strength', 82, 'Trap-bar DL 2.1x BW power transfer', '-0.5% vs Aug')">
+<text fill="#131b2e" font-family="Plus Jakarta Sans" font-size="11" font-weight="700" text-anchor="end" x="-120" y="70">Strength</text>
+<rect fill="#eaedff" height="15" rx="4" width="28" x="-148" y="76"></rect>
+<text fill="#0037b0" font-family="Plus Jakarta Sans" font-size="9" font-weight="800" text-anchor="middle" x="-134" y="87">82</text>
+</g>
+<!-- Endurance -->
+<g class="cursor-pointer" onclick="showTip('Endurance', 86, 'Yo-Yo Intermittent Recovery Level 2: 2,120m', '+4.5% vs Aug')">
+<text fill="#131b2e" font-family="Plus Jakarta Sans" font-size="11" font-weight="700" text-anchor="end" x="-120" y="-62">Endurance</text>
+<rect fill="#eaedff" height="15" rx="4" width="28" x="-148" y="-56"></rect>
+<text fill="#0037b0" font-family="Plus Jakarta Sans" font-size="9" font-weight="800" text-anchor="middle" x="-134" y="-45">86</text>
+</g>
+</svg>
+</div>
+<!-- Interactive Tactical Tooltip Simulator -->
+<div class="mt-space-xs bg-surface-container-high rounded-lg p-space-sm flex items-start justify-between gap-space-sm transition-all duration-200" id="radar-tooltip">
+<div class="flex items-start gap-space-xs min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">insights</span>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-label-md font-bold text-on-surface" id="tip-title">Speed & Acceleration</span>
+<span class="font-headline-sm text-label-xs bg-primary text-on-primary px-1.5 py-0.2 rounded font-bold" id="tip-score">94/100</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate" id="tip-desc">34.8 km/h top sprint speed logged in transition.</p>
+</div>
+</div>
+<span class="font-label-xs text-label-xs font-bold text-secondary bg-secondary-container px-2 py-0.5 rounded-full flex-shrink-0" id="tip-trend">
+        +3.2%
+      </span>
+</div>
+</div>
+<!-- DIMENSION BREAKDOWN CARDS -->
+<div class="w-full flex flex-col space-y-space-xs">
+<div class="flex items-center justify-between px-space-xs">
+<h3 class="font-headline-sm text-label-md font-bold text-on-surface uppercase tracking-wider">Dimension Analysis</h3>
+<span class="font-label-xs text-label-xs text-outline font-semibold">6 Biomarkers</span>
+</div>
+<!-- Speed Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-label-md font-bold text-on-surface">Speed & Burst</h4>
+<span class="font-body-sm text-label-xs text-on-surface-variant">Top Speed: 34.8 km/h</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">94</span>
+<span class="font-label-xs text-label-xs text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">arrow_upward</span>3.2%
+        </span>
+</div>
+</div>
+<!-- Agility Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">directions_run</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-label-md font-bold text-on-surface">Agility & Cuts</h4>
+<span class="font-body-sm text-label-xs text-on-surface-variant">Change of direction 4.12s</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">91</span>
+<span class="font-label-xs text-label-xs text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">arrow_upward</span>1.8%
+        </span>
+</div>
+</div>
+<!-- Ball Technique Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">sports_soccer</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-label-md font-bold text-on-surface">Tactical & Technique</h4>
+<span class="font-body-sm text-label-xs text-on-surface-variant">Attacking 3rd retention: 88%</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">89</span>
+<span class="font-label-xs text-label-xs text-outline font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">horizontal_rule</span>Stable
+        </span>
+</div>
+</div>
+<!-- Endurance Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">cardiology</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-label-md font-bold text-on-surface">Endurance & VO2</h4>
+<span class="font-body-sm text-label-xs text-on-surface-variant">Yo-Yo IR2: 2,120m</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">86</span>
+<span class="font-label-xs text-label-xs text-secondary font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">arrow_upward</span>4.5%
+        </span>
+</div>
+</div>
+</div>
+<!-- COACH'S SCOUTING & DEVELOPMENT NOTE -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+</div>
+<h4 class="font-headline-sm text-label-md font-bold text-on-surface">Coach Marcus Evaluation</h4>
+</div>
+<span class="font-label-xs text-label-xs text-outline font-semibold">Logged 2d ago</span>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+        “Exceptional acceleration in transition and decisive 1v1 cuts. Recommend maintaining high-intensity anaerobic interval drills ahead of State Finals. Needs tighter defensive tracking recovery in minute 75+.”
+      </p>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<button class="flex items-center justify-center gap-1.5 py-2.5 px-space-sm bg-surface-container hover:bg-surface-container-high rounded-lg text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+<span class="font-headline-sm text-label-sm font-semibold">Export PDF</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2.5 px-space-sm bg-primary-container text-on-primary rounded-lg hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span class="font-headline-sm text-label-sm font-semibold">New Test</span>
+</button>
+</div>
+</div>
+<!-- QUICK SWITCH ROSTER CAROUSEL -->
+<div class="w-full space-y-space-xs pb-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-headline-sm text-label-sm font-bold text-on-surface uppercase tracking-wider">Compare Squad Members</span>
+<a class="font-label-xs text-label-xs text-primary font-bold" href="#">View All 18</a>
+</div>
+<div class="flex items-center gap-space-sm overflow-x-auto no-scrollbar py-1">
+<!-- Active Item -->
+<div class="flex flex-col items-center flex-shrink-0 w-20 p-2 rounded-xl bg-surface-container text-center cursor-pointer shadow-sm">
+<div class="relative">
+<img class="w-11 h-11 rounded-full object-cover shadow-sm" data-alt="Close up face of Leo Sterling soccer forward wearing blue training jersey, warm lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZP2Fi81r_DudHHtu_BgL_EhQ6jW_lJU8s1q860x_2d96j1Og3M-vNPSUBXxQO4fKkh0Kq8ZX_B8Qy3zW8k2joBkuOkQB4sqxEfUPf8l1-UXiK5lC-XLAMeOojcsMGoP5Z65zjZPmC6sievtn0h4ZzHautQ4TqkzUabpQCERueLLULlbFTqA5kvYQVyIGYEy43LsI20hi3j5Gp2HdmpTC1esvv69Ts-nhTuPR3Crsl5EVus7BZCJn8pA"/>
+<span class="absolute -top-1 -right-1 w-3 h-3 bg-secondary rounded-full ring-2 ring-surface-container"></span>
+</div>
+<span class="font-headline-sm text-label-xs font-bold text-on-surface mt-1 truncate w-full">Leo S.</span>
+<span class="font-label-xs text-[10px] text-primary font-bold">FWD • 88.3</span>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col items-center flex-shrink-0 w-20 p-2 rounded-xl bg-surface-container-lowest text-center cursor-pointer hover:bg-surface-container-low transition-colors shadow-sm" onclick="switchRoster('Marcus Rivera', 'Midfielder', '84.1', '#8', [88, 85, 84, 87, 92, 86])">
+<img class="w-11 h-11 rounded-full object-cover" data-alt="Portrait of Marcus Rivera, young Hispanic soccer midfielder in red uniform looking forward, energetic expression, studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6UHHtisy6eZKRj4T7MNHitfgq6_ktf6tons2qmhfhLv2Uo841xMugq7aZqiCgGPKsP2I7_5QvNtIGOJGLR0fbJpVXSFRWu33fbXBltBBrLD7y-VqqW9ZbJaj3I_nzYMbIOk11Cr-B46zuRlrGkEANPHVTvnpubRHlS4e4d64XfuplOUlig3ed9HqVfGQo8atvKqmohyeJch4W0LXRE5EEUJlaUTCyYt17D-1GUZdQugmim-rAI5AyiQ"/>
+<span class="font-headline-sm text-label-xs font-medium text-on-surface mt-1 truncate w-full">Marcus R.</span>
+<span class="font-label-xs text-[10px] text-on-surface-variant">MID • 84.1</span>
+</div>
+<!-- Item 3 -->
+<div class="flex flex-col items-center flex-shrink-0 w-20 p-2 rounded-xl bg-surface-container-lowest text-center cursor-pointer hover:bg-surface-container-low transition-colors shadow-sm" onclick="switchRoster('Tyler Chen', 'Defender', '81.6', '#4', [81, 79, 91, 78, 80, 85])">
+<img class="w-11 h-11 rounded-full object-cover" data-alt="Athletic headshot of Tyler Chen, Asian male soccer central defender in athletic warm-up jersey, focused and serious demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhW6pIiFEabYwCkCKIYAlKIVFTd4lN2XLl5EbIQFZgZcFW9X-QpgdJWEkG_vdHdHhki-RNi1yDvNzOeSd-7_vOmgutnlyuAnPJgvWNW4lz-KarcDONn2mihbkGEB0gmlIg5e3UDD2pFTMW_vI0t-uzn4J_1qKQ19lzQv2v5xYseR4RBJspjOFOpkc4yDjbQNsuC4LwdTCwHdqkDpt-VaXNVWsZtDQwg2U1hMiY5T9RgfcYrI9ZCWNytw"/>
+<span class="font-headline-sm text-label-xs font-medium text-on-surface mt-1 truncate w-full">Tyler C.</span>
+<span class="font-label-xs text-[10px] text-on-surface-variant">DEF • 81.6</span>
+</div>
+<!-- Item 4 -->
+<div class="flex flex-col items-center flex-shrink-0 w-20 p-2 rounded-xl bg-surface-container-lowest text-center cursor-pointer hover:bg-surface-container-low transition-colors shadow-sm" onclick="switchRoster('Samira Patel', 'Sprinter / Wing', '92.4', '#11', [98, 89, 75, 94, 86, 91])">
+<img class="w-11 h-11 rounded-full object-cover" data-alt="Portrait of Samira Patel, female sprinter and wing with focused athletic expression, hair pulled back, subtle sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC_mNivO0izf6wCYzbXe1OMZcxVMhbuvWiGJ7TE2xy1Gk0juIkZmEt2hzLRxoZV8V8X-1yv0NbfyYyNvK9bnc9EP7X4TjK0bUnOq1uuAwT1MOOKNUhpilWCJ8oxKY4SULKpzK_64AWQ3P9YzU_FOrJlXSPeCkqkV21h8Kf_qYAnStfAhPLkKKaa9iH_MS-7NAWLGB9UMP4Gr_LAtNdJ8M63eFL_0Ok5tuPn48i2F5EEjE00cBaGvqv-w"/>
+<span class="font-headline-sm text-label-xs font-medium text-on-surface mt-1 truncate w-full">Samira P.</span>
+<span class="font-label-xs text-[10px] text-on-surface-variant">WNG • 92.4</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Interactive toggle between 'vs Team Avg' and 'vs Previous Assessment'
+  const toggleTeam = document.getElementById('toggle-team');
+  const togglePrev = document.getElementById('toggle-prev');
+  const compPoly = document.getElementById('comp-poly');
+  const legendLabel = document.getElementById('legend-comp-label');
+
+  const teamPoints = "0,-104 87.8,-50.7 87.8,50.7 0,100.1 -86.7,50.1 -86.7,-50.1";
+  const prevPoints = "0,-118.3 100.2,-57.8 100.2,57.8 0,113.1 -93.4,53.9 -92.3,-53.3"; // Aug Assessment (~85.1)
+
+  toggleTeam.addEventListener('click', () => {
+    toggleTeam.className = "flex-1 py-1.5 px-2 rounded-md font-label-sm text-label-sm font-bold bg-surface-container-lowest text-on-surface shadow-sm transition-all text-center";
+    togglePrev.className = "flex-1 py-1.5 px-2 rounded-md font-label-sm text-label-sm font-medium text-on-surface-variant hover:text-on-surface transition-all text-center";
+    compPoly.setAttribute('points', teamPoints);
+    legendLabel.textContent = "U19 Squad (79.4)";
+  });
+
+  togglePrev.addEventListener('click', () => {
+    togglePrev.className = "flex-1 py-1.5 px-2 rounded-md font-label-sm text-label-sm font-bold bg-surface-container-lowest text-on-surface shadow-sm transition-all text-center";
+    toggleTeam.className = "flex-1 py-1.5 px-2 rounded-md font-label-sm text-label-sm font-medium text-on-surface-variant hover:text-on-surface transition-all text-center";
+    compPoly.setAttribute('points', prevPoints);
+    legendLabel.textContent = "Aug 2025 Test (85.1)";
+  });
+
+  // Dynamic Tooltip updater
+  function showTip(title, score, desc, trend) {
+    const tipEl = document.getElementById('radar-tooltip');
+    document.getElementById('tip-title').textContent = title;
+    document.getElementById('tip-score').textContent = score + '/100';
+    document.getElementById('tip-desc').textContent = desc;
+    document.getElementById('tip-trend').textContent = trend;
+    
+    // Quick flash highlight
+    tipEl.classList.add('bg-surface-container-highest');
+    setTimeout(() => {
+      tipEl.classList.remove('bg-surface-container-highest');
+    }, 280);
+  }
+
+  // Interactive Athlete Swap simulation
+  function switchRoster(name, position, rating, number, metrics) {
+    showTip('Active Athlete: ' + name, rating, position + ' metric load updated in real time.', '+2.1% squad avg');
+  }
+</script></main><nav class="fixed bottom-0 w-full z-40 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(19,27,46,0.06)]" data-active-classes="text-primary-container font-bold relative after:content-[''] after:absolute after:bottom-1 after:w-8 after:h-0.5 after:bg-primary-container after:rounded-full"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-xs text-label-xs mt-0.5">Overview</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="tournaments" href="#"><span class="material-symbols-outlined text-[24px]">emoji_events</span><span class="font-label-xs text-label-xs mt-0.5">Tournaments</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="highlights" href="#"><span class="material-symbols-outlined text-[24px]">play_circle</span><span class="font-label-xs text-label-xs mt-0.5">Highlights</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-14 transition-colors text-primary-container font-bold relative after:content-[''] after:absolute after:bottom-1 after:w-8 after:h-0.5 after:bg-primary-container after:rounded-full" data-path="radar" href="#"><span class="material-symbols-outlined text-[24px]">radar</span><span class="font-label-xs text-label-xs mt-0.5">Radar</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="athletes-network" href="#"><span class="material-symbols-outlined text-[24px]">groups</span><span class="font-label-xs text-label-xs mt-0.5">Athletes</span></a></div></nav></body></html>

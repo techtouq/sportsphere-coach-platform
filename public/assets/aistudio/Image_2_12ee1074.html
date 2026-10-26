@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>SportSphere Coach Platform</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#eaedff", "on-primary-container": "#cad3ff", "secondary-fixed-dim": "#6bd8cb", "on-secondary": "#ffffff", "background": "#faf8ff", "tertiary-fixed-dim": "#ffb95f", "surface-tint": "#2151da", "outline-variant": "#c4c5d7", "inverse-on-surface": "#eef0ff", "outline": "#747686", "error-container": "#ffdad6", "on-surface": "#131b2e", "on-tertiary-container": "#ffcb8f", "on-primary": "#ffffff", "tertiary-fixed": "#ffddb8", "secondary-container": "#86f2e4", "on-surface-variant": "#434655", "secondary-fixed": "#89f5e7", "inverse-primary": "#b7c4ff", "error": "#ba1a1a", "on-error-container": "#93000a", "surface-dim": "#d2d9f4", "surface-container-low": "#f2f3ff", "on-primary-fixed-variant": "#0039b5", "on-secondary-fixed": "#00201d", "primary": "#0037b0", "tertiary-container": "#825100", "tertiary": "#623c00", "surface-container-lowest": "#ffffff", "primary-container": "#1d4ed8", "surface-bright": "#faf8ff", "surface-container-high": "#e2e7ff", "on-secondary-fixed-variant": "#005049", "surface-container-highest": "#dae2fd", "on-background": "#131b2e", "inverse-surface": "#283044", "on-tertiary": "#ffffff", "on-tertiary-fixed-variant": "#653e00", "secondary": "#006a61", "primary-fixed-dim": "#b7c4ff", "on-secondary-container": "#006f66", "primary-fixed": "#dce1ff", "surface": "#faf8ff", "surface-variant": "#dae2fd", "on-primary-fixed": "#001551", "on-tertiary-fixed": "#2a1700", "on-error": "#ffffff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-sm": "1rem", "margin": "2rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "gutter": "1.5rem", "margin-mobile": "1rem", "space-md": "1rem", "space-xl": "2rem" }, "fontFamily": { "headline-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-xs": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "metric-display": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;background-color:#faf8ff;color:#131b2e;font-family:'Inter',sans-serif;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom,0px) + 4rem);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}input[type="checkbox"]:checked~#drawer-backdrop{display:block;}input[type="checkbox"]:checked~#coach-drawer{transform:translateX(0);}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased"><input class="hidden peer" id="drawer-toggle" type="checkbox"/><div class="fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-50 hidden transition-opacity" id="drawer-backdrop" onclick="document.getElementById('drawer-toggle').checked = false"></div><aside class="fixed top-0 left-0 bottom-0 w-[84%] max-w-[320px] bg-surface-container-lowest z-50 shadow-[0_20px_25px_-5px_rgba(15,23,42,0.12)] -translate-x-full transition-transform duration-300 ease-in-out flex flex-col pt-safe pb-safe" id="coach-drawer"><div class="h-16 px-space-md flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="SportSphere Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vx4lPFMjqJhOe4WCuim2Zz9kJrYrKu5qxaSM8FBLmuIwIXHU16s2_RbR_INUXXuNqCwPkIBID4j_Kx3IvViaVlQNkd28eewYiDWZKK3dSz1PIUWvifN5iTBFu4n6s4Fe-tY4YYzPEEMcyAJupTF9CZznYmObu38EacT-m6EvofF8lTZ1zypn78u1Q-qYeTJU-TFZT2vZDIaDg5tFoWPQwioenJT3qtKj_UTVokhvuWrW3m5XDOfIqoBPKO"/><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">SportSphere</span></div><button class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="document.getElementById('drawer-toggle').checked = false"><span class="material-symbols-outlined text-[24px]">close</span></button></div><div class="px-space-md py-space-sm bg-surface-container-low flex items-center gap-space-sm mx-space-md rounded-xl my-space-xs"><div class="relative flex-shrink-0"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center overflow-hidden"><span class="material-symbols-outlined text-on-primary text-[22px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim ring-2 ring-surface-container-lowest"></span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-label-md text-on-surface font-bold truncate">Coach Marcus Vance</span><span class="font-label-xs text-label-xs text-secondary font-semibold uppercase tracking-wider">High Performance Lead</span></div></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm space-y-space-xs"><p class="px-space-sm font-label-xs text-label-xs font-bold text-outline uppercase tracking-wider mb-space-xs">Coach Navigation</p><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md font-medium">Overview</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="highlights" href="#"><span class="material-symbols-outlined text-[20px]">movie</span><span class="font-label-md text-label-md font-medium">Highlights</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="sports-news" href="#"><span class="material-symbols-outlined text-[20px]">newspaper</span><span class="font-label-md text-label-md font-medium">Sports News</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="tournaments" href="#"><span class="material-symbols-outlined text-[20px]">emoji_events</span><span class="font-label-md text-label-md font-medium">Tournaments</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="athletes-network" href="#"><span class="material-symbols-outlined text-[20px]">diversity_3</span><span class="font-label-md text-label-md font-medium">Network</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="rankings" href="#"><span class="material-symbols-outlined text-[20px]">leaderboard</span><span class="font-label-md text-label-md font-medium">Rankings</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="radar" href="#"><span class="material-symbols-outlined text-[20px]">radar</span><span class="font-label-md text-label-md font-medium">Performance Radar</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="my-athletes" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-md text-label-md font-medium">My Athletes</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="training" href="#"><span class="material-symbols-outlined text-[20px]">fitness_center</span><span class="font-label-md text-label-md font-medium">Training</span></a><a class="flex items-center gap-space-sm px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="coach-profile" href="#"><span class="material-symbols-outlined text-[20px]">account_circle</span><span class="font-label-md text-label-md font-medium">Profile</span></a></div></aside><header class="fixed top-0 w-full z-40 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="h-16 px-space-md flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs"><label class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer" for="drawer-toggle"><span class="material-symbols-outlined text-[24px]">menu</span></label><img alt="SportSphere Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vx4lPFMjqJhOe4WCuim2Zz9kJrYrKu5qxaSM8FBLmuIwIXHU16s2_RbR_INUXXuNqCwPkIBID4j_Kx3IvViaVlQNkd28eewYiDWZKK3dSz1PIUWvifN5iTBFu4n6s4Fe-tY4YYzPEEMcyAJupTF9CZznYmObu38EacT-m6EvofF8lTZ1zypn78u1Q-qYeTJU-TFZT2vZDIaDg5tFoWPQwioenJT3qtKj_UTVokhvuWrW3m5XDOfIqoBPKO"/><span class="font-headline-sm text-headline-sm text-on-surface font-extrabold tracking-tight hidden xs:inline">Tournaments</span></div><div class="flex items-center bg-surface-container-high p-0.5 rounded-full"><span class="px-2 py-0.5 text-label-xs font-headline-sm font-semibold text-outline-variant hover:text-on-surface transition-colors cursor-pointer">Ath</span><span class="px-2 py-0.5 text-label-xs font-headline-sm font-semibold text-outline-variant hover:text-on-surface transition-colors cursor-pointer">Org</span><span class="px-2.5 py-1 text-label-xs font-headline-sm font-bold text-on-primary bg-primary-container rounded-full shadow-[0_1px_3px_0_rgba(15,23,42,0.1)]">Coach</span></div><div class="flex items-center gap-0.5"><button class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">search</span></button><button class="relative w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><div class="relative flex-shrink-0 ml-1"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim ring-2 ring-surface"></span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-28">
+<!-- Search & Tactical Control Bar -->
+<section class="px-space-md pt-space-sm pb-space-xs flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px] pointer-events-none">search</span>
+<input class="w-full h-11 pl-10 pr-9 rounded-xl bg-surface-container-lowest text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none shadow-sm transition-all" placeholder="Search tournaments, venues, federations..." type="search"/>
+<button aria-label="Clear search" class="absolute right-2.5 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full flex items-center justify-center text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">cancel</span>
+</button>
+</div>
+<button class="relative h-11 px-3.5 rounded-xl bg-primary-container text-on-primary flex items-center gap-1.5 shadow-sm active:scale-95 transition-transform flex-shrink-0" id="filter-modal-trigger">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="font-label-sm text-label-sm font-semibold">Filters</span>
+<span class="w-4 h-4 rounded-full bg-on-primary text-primary-container font-label-xs text-[10px] font-extrabold flex items-center justify-center">3</span>
+</button>
+<button class="h-11 px-2.5 rounded-xl bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm font-medium hover:bg-surface-container active:scale-95 transition-colors flex-shrink-0" type="button">
+        Reset
+      </button>
+</div>
+<!-- Active Filter Summary Metric Row -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-xs text-label-xs text-on-surface-variant tracking-wider uppercase">Showing 28 tournaments in All Sports</span>
+</div>
+<button class="flex items-center gap-0.5 text-primary font-label-xs text-label-xs font-bold">
+<span>Sort by Date</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Horizontal Sport Category Strip -->
+<section class="py-space-xs">
+<div class="flex gap-2 overflow-x-auto px-space-md no-scrollbar items-center py-1">
+<!-- Active Pill -->
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-primary-container text-on-primary shadow-sm flex-shrink-0 font-label-sm text-label-sm font-bold tracking-tight">
+<span class="material-symbols-outlined text-[17px]">sports</span>
+<span>All Sports</span>
+<span class="px-1.5 py-0.2 rounded-full bg-on-primary/20 text-on-primary text-[10px] font-bold">28</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors shadow-sm flex-shrink-0 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[17px] text-primary">sports_soccer</span>
+<span>Football</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors shadow-sm flex-shrink-0 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[17px] text-tertiary">sports_cricket</span>
+<span>Cricket</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors shadow-sm flex-shrink-0 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[17px] text-secondary">sprint</span>
+<span>Athletics</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors shadow-sm flex-shrink-0 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[17px] text-primary">sports_basketball</span>
+<span>Basketball</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors shadow-sm flex-shrink-0 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[17px] text-outline">sports_tennis</span>
+<span>Badminton</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors shadow-sm flex-shrink-0 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[17px] text-secondary">sports_volleyball</span>
+<span>Volleyball</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors shadow-sm flex-shrink-0 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[17px] text-primary">sports_tennis</span>
+<span>Tennis</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors shadow-sm flex-shrink-0 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[17px] text-secondary">pool</span>
+<span>Swimming</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors shadow-sm flex-shrink-0 font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[17px] text-outline">maps_ar</span>
+<span>Table Tennis</span>
+</button>
+</div>
+</section>
+<!-- Secondary Tactical Level Quick-Filters -->
+<section class="py-space-xs">
+<div class="flex gap-2 overflow-x-auto px-space-md no-scrollbar items-center">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-xs text-label-xs font-semibold flex-shrink-0">
+<span>Level: All (State, Nat'l)</span>
+<span class="material-symbols-outlined text-[14px]">arrow_drop_down</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-xs text-label-xs font-semibold flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">calendar_today</span>
+<span>Next 30 Days</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-xs text-label-xs font-bold flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Open Registration</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-xs text-label-xs font-medium flex-shrink-0">
+<span>U17 & U19</span>
+</button>
+<button class="flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container-low text-outline font-label-xs text-label-xs font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">add</span>
+<span>More</span>
+</button>
+</div>
+</section>
+<!-- Tournament Feeds & Rich Cards -->
+<section class="px-space-md py-space-sm flex flex-col gap-space-md">
+<!-- Card 1: All-State Youth Football Championship 2025 -->
+<article class="flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm transition-all hover:shadow-md">
+<!-- Media Header -->
+<div class="relative w-full h-44 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Dynamic wide cinematic action photo of high school boys competitive football championship match on lush green floodlit stadium pitch during golden hour twilight, hyper-focused athletic players running with speed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADjkkyc8d7A33bLPtrhXHPgWXliY_vDkZZzEMSblj1mzvU82v-EOxeeOgi_ZXj8xVj1nZnBP4h3BXQbzEeupPEcT4FbKQLysm7AbqBaxPb7cJxPrnnsijSY5nBk3EAdF0brD_DcM1bxli1j2NHOxZKrg1AfucuSzTbF7A7ZpP8bHqyc-MwOfNjwG-bAsexCt1jylepwy4vtzX2PbUmbQ7kDRjCWPhS4WLACNntEgqC9665hfQSbKiHSg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/20 to-transparent"></div>
+<!-- Top Badges Overlay -->
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-xs text-label-xs font-bold uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+            Football • State Level
+          </span>
+<button aria-label="Bookmark Tournament" class="w-8 h-8 rounded-full bg-on-surface/40 backdrop-blur-md text-surface-container-lowest flex items-center justify-center hover:bg-on-surface/60 transition-colors" onclick="this.classList.toggle('text-error'); this.classList.toggle('text-surface-container-lowest');" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<!-- Bottom Scrim Info -->
+<div class="absolute bottom-2.5 left-3 right-3 flex items-end justify-between text-surface-container-lowest">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">verified</span>
+<span class="font-label-xs text-label-xs font-medium opacity-90 truncate max-w-[210px]">State Youth Football Association</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-tertiary font-label-xs text-[10px] font-extrabold uppercase">Sanctioned</span>
+</div>
+</div>
+<!-- Card Core Information -->
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-tertiary-fixed/40 text-tertiary font-label-xs text-label-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">alarm</span>
+              Closes in 48h
+            </span>
+<span class="text-outline font-label-xs text-label-xs">• Tier 1 Scout Presence</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1 tracking-tight">
+            All-State Youth Football Championship 2025
+          </h2>
+</div>
+<!-- Location & Calendar Grid -->
+<div class="grid grid-cols-2 gap-2 p-2.5 rounded-xl bg-surface-container-low">
+<div class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5 flex-shrink-0">calendar_month</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-xs text-label-xs text-outline font-bold uppercase">Dates</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Oct 24 – 28, 2025</span>
+</div>
+</div>
+<div class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5 flex-shrink-0">pin_drop</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-xs text-label-xs text-outline font-bold uppercase">Venue</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Lone Star Arena, TX</span>
+</div>
+</div>
+</div>
+<!-- Metric & Eligibility Meta -->
+<div class="flex flex-col gap-2 pt-1">
+<div class="flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[16px]">groups</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">U19 Boys / Verified Club Athletes</span>
+</div>
+<span class="font-headline-sm text-label-md text-on-surface font-bold">$150 <span class="font-body-sm text-label-xs text-outline font-normal">/ Team</span></span>
+</div>
+<!-- Quota Capacity Progress -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-xs text-label-xs">
+<span class="text-on-surface-variant font-medium">Registration Status</span>
+<span class="font-bold text-primary">8 / 16 Slots Filled (50%)</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+</div>
+<!-- Coach Action Bar -->
+<div class="flex items-center gap-2 pt-2">
+<button aria-label="Share tournament" class="h-10 w-10 rounded-xl bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[19px]">share</span>
+</button>
+<button class="h-10 px-3 rounded-xl bg-surface-container-low text-on-surface font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1 hover:bg-surface-container transition-colors flex-1" type="button">
+<span class="material-symbols-outlined text-[17px] text-outline">group_add</span>
+<span>Assign Roster</span>
+</button>
+<button class="h-10 px-4 rounded-xl bg-primary-container text-on-primary font-headline-sm text-label-sm font-bold flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform flex-1" type="button">
+<span>Register</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2: National Junior Athletics Track & Field Trials -->
+<article class="flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm transition-all hover:shadow-md">
+<div class="relative w-full h-40 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Crisp professional sports photography of junior track and field sprinters bursting off starting blocks on red polyurethane running track, clear morning sunlight casting sharp athletic shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpW16DX-rfPoPpOHlQhk6lFqEdsKpGQdUD3Il_sZa1uOfCZc0SkvVI2zlkd_ZtcuP-7zt03Ns7PSSlU9aZYjYjOg_WMG3A61LGejTVnfLOHRHnGijzvSLq2jXn3eYLh_EjoCcsu2xP18UxytWciTilOb01nBDAPcsJwulQjI9aTbquBilsHfqhgE1plq-hfvdlYurngbKxQI_jCwto-mjxY0eurNw7MIGl_ttwLkLMGFOPugUZj_4HZw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/20 to-transparent"></div>
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-md bg-secondary text-on-secondary font-label-xs text-label-xs font-bold uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">military_tech</span>
+            Athletics • National Qualifier
+          </span>
+<button aria-label="Bookmark Tournament" class="w-8 h-8 rounded-full bg-on-surface/40 backdrop-blur-md text-surface-container-lowest flex items-center justify-center hover:bg-on-surface/60 transition-colors" onclick="this.classList.toggle('text-error'); this.classList.toggle('text-surface-container-lowest');" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-surface-container-lowest">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary-fixed">shield</span>
+<span class="font-label-xs text-label-xs font-medium opacity-90 truncate max-w-[210px]">National Athletic Federation</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-xs text-[10px] font-extrabold uppercase">Olympic Path</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-xs text-label-xs font-bold">
+              Deadline: Nov 01 (Open)
+            </span>
+<span class="text-outline font-label-xs text-label-xs">Electronic Timed</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1 tracking-tight">
+            National Junior Athletics Track & Field Trials
+          </h2>
+</div>
+<!-- Venue & Date Compact Info -->
+<div class="grid grid-cols-2 gap-2 p-2.5 rounded-xl bg-surface-container-low">
+<div class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5 flex-shrink-0">event</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-xs text-label-xs text-outline font-bold uppercase">Dates</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Nov 12 – 15, 2025</span>
+</div>
+</div>
+<div class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5 flex-shrink-0">stadium</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-xs text-label-xs text-outline font-bold uppercase">Location</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Olympic Park, Sec 4</span>
+</div>
+</div>
+</div>
+<!-- Eligibility Criteria Note -->
+<div class="p-2.5 rounded-xl bg-surface-container flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">info</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong class="font-semibold text-on-surface">Criteria:</strong> U17 & U20 athletes with verified sub-11.5s 100m or state minimum qualifying benchmarks.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-outline">Coach Passes:</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">2 Included / Club</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">$45 <span class="font-body-sm text-label-xs text-outline font-normal">/ Athlete</span></span>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 pt-1">
+<button aria-label="Share" class="h-10 w-10 rounded-xl bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[19px]">share</span>
+</button>
+<button class="h-10 px-4 rounded-xl bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold flex items-center justify-center gap-1 hover:bg-surface-container transition-colors flex-1" type="button">
+<span>View Schedule</span>
+</button>
+<button class="h-10 px-4 rounded-xl bg-primary-container text-on-primary font-headline-sm text-label-sm font-bold flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform flex-1" type="button">
+<span>Nominate Athletes</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3: Metropolitan Inter-School Basketball Trophy -->
+<article class="flex flex-col bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm transition-all hover:shadow-md">
+<div class="relative w-full h-40 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="High intensity indoor basketball tournament match arena with polished hardwood floor showing dynamic youth team player making a reverse layup, dramatic overhead stadium arena lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5ujgFPtxslLZcPwh_KsSTH3Li4CEbtEk12zwDM51L59H8K9k-fG3sb8DzVN80myhnKsq1WVEQLgfz941zXFo5_moLMv1W4Iz0MkVI5vqnZ66dXdVS-LMUZt-es7BxSCOlXclfT5cUgCRAD0ods757f84h4tPfvGrLYbp-Yssiu_QyUTpImjoXc3Qc8IZylyF0sdZ9x0UhVxFB7VVnnj4Vt4-KrN3y4rQOpyVKDIXzoJteE1WpOuxRiA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/20 to-transparent"></div>
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-xs text-label-xs font-bold uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+            Basketball • District Level
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-xs text-label-xs font-extrabold uppercase shadow-sm">
+            Free Entry / Sponsored
+          </span>
+</div>
+<div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-surface-container-lowest">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">location_city</span>
+<span class="font-label-xs text-label-xs font-medium opacity-90 truncate">Metro Athletics Sports Council</span>
+</div>
+<span class="font-label-xs text-label-xs opacity-80">32 High Schools</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-xs text-label-xs font-semibold">
+              Reg Deadline: Nov 10
+            </span>
+<span class="text-secondary font-label-xs text-label-xs font-bold">• 4 Scout Tables Booked</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1 tracking-tight">
+            Metropolitan Inter-School Basketball Trophy
+          </h2>
+</div>
+<div class="grid grid-cols-2 gap-2 p-2.5 rounded-xl bg-surface-container-low">
+<div class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5 flex-shrink-0">date_range</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-xs text-label-xs text-outline font-bold uppercase">Dates</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">Nov 20 – 22, 2025</span>
+</div>
+</div>
+<div class="flex items-start gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5 flex-shrink-0">meeting_room</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-xs text-label-xs text-outline font-bold uppercase">Court</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold truncate">City Indoor Arena</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-body-sm pt-1">
+<span class="text-on-surface-variant">Division: Varsity & JV Boys</span>
+<span class="font-headline-sm text-label-md text-secondary font-bold">$0 Registration</span>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<button aria-label="Bookmark" class="h-10 w-10 rounded-xl bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:bg-surface-container active:scale-95 transition-all flex-shrink-0" type="button">
+<span class="material-symbols-outlined text-[19px]">bookmark</span>
+</button>
+<button class="h-10 px-4 rounded-xl bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1 hover:bg-surface-container transition-colors flex-1" type="button">
+<span>Download Bracket</span>
+</button>
+<button class="h-10 px-4 rounded-xl bg-primary-container text-on-primary font-headline-sm text-label-sm font-bold flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform flex-1" type="button">
+<span>Apply Team</span>
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- Interactive Coach Scouting Prep Bottom Drawer Floating Banner -->
+<aside class="fixed bottom-20 left-3 right-3 z-30 max-w-md mx-auto">
+<div class="p-3 bg-inverse-surface text-inverse-on-surface rounded-2xl shadow-xl flex items-center justify-between gap-2 border-0">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm font-bold text-inverse-on-surface truncate">My Prep List</span>
+<span class="px-1.5 py-0.2 rounded-full bg-secondary text-on-secondary font-label-xs text-[10px] font-extrabold">3 Saved</span>
+</div>
+<span class="font-body-sm text-[11px] text-outline-variant truncate">12 Assigned Athletes Eligible</span>
+</div>
+</div>
+<button class="h-9 px-3.5 rounded-xl bg-on-primary text-primary font-label-sm text-label-sm font-bold flex items-center gap-1 flex-shrink-0 active:scale-95 transition-transform shadow-sm" id="open-prep-panel" type="button">
+<span>Manage</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</aside>
+<!-- Quick Filter Slide-up Backdrop Modal (Pure CSS/JS lightweight) -->
+<div class="fixed inset-0 z-50 bg-on-surface/50 backdrop-blur-sm hidden flex items-end justify-center" id="filter-modal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-t-3xl p-space-md flex flex-col gap-space-sm shadow-2xl max-h-[751px] overflow-y-auto">
+<div class="w-10 h-1 rounded-full bg-outline-variant mx-auto mb-1"></div>
+<div class="flex items-center justify-between pb-2">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Tournament Filters</h3>
+<span class="font-label-xs text-label-xs text-outline">Tailor scouting opportunities for your roster</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant" id="close-filter-modal">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Age brackets -->
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Age Brackets</span>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-xs text-label-xs font-semibold">U15</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-xs text-label-xs font-bold">U17 (Active)</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-xs text-label-xs font-bold">U19 (Active)</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-xs text-label-xs font-semibold">Senior College</button>
+</div>
+<!-- Sanctioning Tier -->
+<span class="font-label-sm text-label-sm font-bold text-on-surface mt-2">Sanctioning Body & Scope</span>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-xs text-label-xs font-semibold">District</button>
+<button class="px-3 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-xs text-label-xs font-bold">State Level</button>
+<button class="px-3 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-xs text-label-xs font-bold">National</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-xs text-label-xs font-semibold">Invitational</button>
+</div>
+<!-- Entry Fee Model -->
+<span class="font-label-sm text-label-sm font-bold text-on-surface mt-2">Entry Format</span>
+<div class="grid grid-cols-2 gap-2">
+<button class="p-2.5 rounded-xl bg-surface-container text-left flex items-center justify-between font-label-sm text-label-sm">
+<span>Free / Sponsored</span>
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+</button>
+<button class="p-2.5 rounded-xl bg-surface-container-high text-left flex items-center justify-between font-label-sm text-label-sm text-outline">
+<span>Paid Entry</span>
+<span class="material-symbols-outlined text-[18px]">radio_button_unchecked</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-4">
+<button class="h-11 px-4 rounded-xl bg-surface-container-low text-on-surface font-label-sm text-label-sm font-bold flex-1" id="reset-filters">
+          Clear All
+        </button>
+<button class="h-11 px-4 rounded-xl bg-primary-container text-on-primary font-label-sm text-label-sm font-bold flex-1 shadow-sm" id="apply-filters">
+          Apply (28 Events)
+        </button>
+</div>
+</div>
+</div>
+<script>
+    (function initTournamentDiscovery() {
+      const modalTrigger = document.getElementById('filter-modal-trigger');
+      const filterModal = document.getElementById('filter-modal');
+      const closeFilter = document.getElementById('close-filter-modal');
+      const applyFilter = document.getElementById('apply-filters');
+      const resetFilter = document.getElementById('reset-filters');
+      const openPrep = document.getElementById('open-prep-panel');
+
+      function toggleModal(open) {
+        if (!filterModal) return;
+        if (open) {
+          filterModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        } else {
+          filterModal.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+      }
+
+      if (modalTrigger) modalTrigger.addEventListener('click', () => toggleModal(true));
+      if (closeFilter) closeFilter.addEventListener('click', () => toggleModal(false));
+      if (applyFilter) applyFilter.addEventListener('click', () => toggleModal(false));
+      if (resetFilter) resetFilter.addEventListener('click', () => toggleModal(false));
+
+      if (filterModal) {
+        filterModal.addEventListener('click', (e) => {
+          if (e.target === filterModal) toggleModal(false);
+        });
+      }
+
+      if (openPrep) {
+        openPrep.addEventListener('click', () => {
+          alert('Opening Coach Preparation Roster for 3 Tournaments');
+        });
+      }
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-40 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(19,27,46,0.06)]" data-active-classes="text-primary-container font-bold relative after:content-[''] after:absolute after:bottom-1 after:w-8 after:h-0.5 after:bg-primary-container after:rounded-full"><div class="h-16 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[24px]">home</span><span class="font-label-xs text-label-xs mt-0.5">Overview</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-14 transition-colors text-primary-container font-bold relative after:content-[''] after:absolute after:bottom-1 after:w-8 after:h-0.5 after:bg-primary-container after:rounded-full" data-path="tournaments" href="#"><span class="material-symbols-outlined text-[24px]">emoji_events</span><span class="font-label-xs text-label-xs mt-0.5">Tournaments</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="highlights" href="#"><span class="material-symbols-outlined text-[24px]">play_circle</span><span class="font-label-xs text-label-xs mt-0.5">Highlights</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="radar" href="#"><span class="material-symbols-outlined text-[24px]">radar</span><span class="font-label-xs text-label-xs mt-0.5">Radar</span></a><a class="flex flex-col items-center justify-center w-14 h-14 text-on-surface-variant hover:text-on-surface transition-colors" data-path="athletes-network" href="#"><span class="material-symbols-outlined text-[24px]">groups</span><span class="font-label-xs text-label-xs mt-0.5">Athletes</span></a></div></nav></body></html>
